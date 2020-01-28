@@ -1,0 +1,45 @@
+{
+  "name": "how-many-comfirmed-infections-in-wenzhou",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "npx parcel index.html",
+    "prebuild": "npx ts-node ./scripts/update-dxy-data.ts",
+    "build": "npx parcel build index.html --public-url /how-many-comfirmed-infections-in-wenzhou/",
+    "page": "echo \"require('gh-pages').publish('dist', {repo: 'git@github.com:differui/how-many-comfirmed-infections-in-wenzhou.git'}, (e) => console.log(e || 'done'))\" | node"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/localforage": "0.0.34",
+    "@types/node": "^13.5.0",
+    "@types/node-schedule": "^1.3.0",
+    "@types/react": "^16.9.19",
+    "@types/react-dom": "^16.9.5",
+    "@types/react-router-dom": "^5.1.3",
+    "@types/styled-components": "^4.4.2",
+    "@typescript-eslint/eslint-plugin": "^2.18.0",
+    "@typescript-eslint/parser": "^2.18.0",
+    "gh-pages": "^2.2.0",
+    "node-schedule": "^1.3.2",
+    "parcel-bundler": "^1.12.4",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.5"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.9.0",
+    "@material-ui/icons": "^4.5.1",
+    "i18next": "^19.1.0",
+    "i18next-browser-languagedetector": "^4.0.1",
+    "i18next-xhr-backend": "^3.2.2",
+    "normalize.css": "^8.0.1",
+    "react": "^16.12.0",
+    "react-async": "^10.0.0",
+    "react-dom": "^16.12.0",
+    "react-i18next": "^11.3.1",
+    "react-router-dom": "^5.1.2",
+    "styled-components": "^5.0.0"
+  },
+  "main": "index.js",
+  "description": ""
+}

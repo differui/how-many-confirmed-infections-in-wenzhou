@@ -1,0 +1,16 @@
+{
+  "loading": "正在加载…",
+  "app_title_location": "温州",
+  "app_title_prefix": "",
+  "app_title_suffix": "有多少确诊感染新型冠状病毒的病例?",
+  "counter_title_cured": "治愈",
+  "counter_title_dead": "死亡",
+  "counter_title_suspected": "怀疑",
+  "counter_unit": "确诊",
+  "error_data": "找不到{{location}的统计数据。",
+  "error_default": "Ops…也许以后再试试！",
+  "footnote_secondary": "上次更新时间 {{updated}}。",
+  "footnote_primary": "来自 {{source}} 的源数据。",
+  "news_title": "更新",
+  "source_name": "丁香园"
+}
