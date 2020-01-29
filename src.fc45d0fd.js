@@ -92651,10 +92651,7 @@ exports.WebViewUI = styled_components_1.default.div(function (props) {
     '.page': {
       width: viewport_1.px2vp(300),
       margin: '0 auto',
-      height: '100%',
-      display: 'flex',
-      flexWrap: 'nowrap',
-      flexDirection: 'column'
+      height: '100%'
     },
     '.suspend': {
       zIndex: 1400,
@@ -96642,7 +96639,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65020" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50315" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
