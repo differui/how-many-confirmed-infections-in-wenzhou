@@ -44048,7 +44048,7 @@ module.exports = {
   "counter_title_cured": "cured",
   "counter_title_dead": "dead",
   "counter_title_add": "new",
-  "news_title": "Updates",
+  "news_title": "updates",
   "footnote_primary": "Source data from {{source}}.",
   "footnote_secondary": "Last updated at {{updated}}.",
   "source_name": "丁香园",
@@ -44249,6 +44249,7 @@ function Title(_a) {
       color: theme.palette.gray,
       lineHeight: 1.3,
       marginTop: helpers_1.px2vp(45),
+      marginBottom: helpers_1.px2vp(70),
       em: {
         color: theme.palette.black,
         fontStyle: 'normal',
@@ -92821,7 +92822,8 @@ function Headline(props) {
       color: theme.palette.black,
       fontSize: theme.fontSize.lg,
       fontWeight: theme.fontWeight.bold,
-      marginTop: helpers_1.px2vp(70)
+      marginTop: helpers_1.px2vp(70),
+      textTransform: 'capitalize'
     };
   });
   return react_1.default.createElement(HeadlineUI, null, children);
@@ -95265,7 +95267,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54708" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55188" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
