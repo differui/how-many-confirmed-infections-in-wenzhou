@@ -92879,6 +92879,8 @@ var react_1 = __importDefault(require("react"));
 
 var styled_components_1 = __importDefault(require("styled-components"));
 
+var helpers_1 = require("../helpers");
+
 function Footnote(props) {
   var children = props.children;
   var FootnoteUI = styled_components_1.default.p(function (props) {
@@ -92886,14 +92888,16 @@ function Footnote(props) {
     return {
       color: theme.palette.gray,
       fontSize: theme.fontSize.xxs,
-      textAlign: 'center'
+      textAlign: 'center',
+      marginTop: helpers_1.px2vp(80),
+      marginBottom: helpers_1.px2vp(20)
     };
   });
   return react_1.default.createElement(FootnoteUI, null, children);
 }
 
 exports.Footnote = Footnote;
-},{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/providers/Statistics.ts":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../helpers":"src/helpers/index.ts"}],"src/providers/Statistics.ts":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -93099,8 +93103,6 @@ function Home() {
     return react_1.default.createElement(NewsInList_1.NewsInList, __assign({
       key: item.url
     }, item));
-  }), react_1.default.createElement(core_1.Box, {
-    flex: 1
   }), react_1.default.createElement(Footnote_1.Footnote, null, t('footnote_primary', {
     source: t('source_name')
   }), "\xA0", t('footnote_secondary', {
@@ -96716,7 +96718,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64080" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65235" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
