@@ -23,9 +23,6 @@ export const WebViewUI = styled.div<WebViewUIProps & ThemeProps>(
         width: px2vp(300),
         margin: '0 auto',
         height: '100%',
-        display: 'flex',
-        flexWrap: 'nowrap',
-        flexDirection: 'column',
       },
       '.suspend': {
         zIndex: 1400, // larger than material ui modal component
