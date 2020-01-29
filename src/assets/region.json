@@ -4,12 +4,15 @@
       {
         "regionName": "鹿城区",
         "regionShortName": "鹿城",
-        "confirmedCount": 27
+        "confirmedCount": 27,
+        "severeCount": 5,
+        "curedCount": 1
       },
       {
         "regionName": "瓯海区",
         "regionShortName": "瓯海",
-        "confirmedCount": 9
+        "confirmedCount": 9,
+        "curedCount": 1
       },
       {
         "regionName": "龙湾区",
@@ -24,7 +27,8 @@
       {
         "regionName": "乐清市",
         "regionShortName": "乐清",
-        "confirmedCount": 26
+        "confirmedCount": 26,
+        "severeCount": 2
       },
       {
         "regionName": "瑞安市",
@@ -39,7 +43,8 @@
       {
         "regionName": "永嘉县",
         "regionShortName": "永嘉",
-        "confirmedCount": 12
+        "confirmedCount": 12,
+        "curedCount": 1
       },
       {
         "regionName": "平阳县",
@@ -54,7 +59,8 @@
       {
         "regionName": "文成县",
         "regionShortName": "文成",
-        "confirmedCount": 1
+        "confirmedCount": 1,
+        "severeCount": 1
       },
       {
         "regionName": "泰顺县",
@@ -69,7 +75,8 @@
       {
         "regionName": "鹿城区",
         "regionShortName": "鹿城",
-        "confirmedCount": 17
+        "confirmedCount": 17,
+        "severeCount": 5
       },
       {
         "regionName": "瓯海区",
@@ -89,7 +96,8 @@
       {
         "regionName": "乐清市",
         "regionShortName": "乐清",
-        "confirmedCount": 10
+        "confirmedCount": 10,
+        "severeCount": 1
       },
       {
         "regionName": "瑞安市",
@@ -114,7 +122,8 @@
       {
         "regionName": "文成县",
         "regionShortName": "文成",
-        "confirmedCount": 1
+        "confirmedCount": 1,
+        "severeCount": 1
       },
       {
         "regionName": "泰顺县",
@@ -129,7 +138,8 @@
       {
         "regionName": "鹿城区",
         "regionShortName": "鹿城",
-        "confirmedCount": 10
+        "confirmedCount": 10,
+        "severeCount": 3
       },
       {
         "regionName": "瓯海区",
@@ -149,7 +159,8 @@
       {
         "regionName": "乐清市",
         "regionShortName": "乐清",
-        "confirmedCount": 5
+        "confirmedCount": 5,
+        "severeCount": 1
       },
       {
         "regionName": "瑞安市",
