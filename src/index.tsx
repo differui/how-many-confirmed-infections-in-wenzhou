@@ -6,14 +6,15 @@ import Async from 'react-async';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
+import './i18n';
 import { GlobalStyle } from './components/GlobalStyle';
 import { Home } from './webviews/Home';
 import { Error } from './webviews/Error';
 import { RouteType } from './enums';
 import { BASENAME } from './settings';
 import { DefaultTheme } from './theme';
-import { getStatistics } from './services/dxy';
-import { DXYProvider } from './providers/dxy';
+import { getLatestStatistics } from './services/isaaclin';
+import { IsaaclinProvider } from './providers/isaaclin';
 import { Loading } from './webviews/Loading';
 
 function App() {
@@ -27,18 +28,18 @@ function App() {
   };
 
   return (
-    <Async promiseFn={getStatistics}>
+    <Async promiseFn={getLatestStatistics}>
       {({ data, error, isLoading }) => {
         if (data) {
           return (
-            <DXYProvider value={data!}>
+            <IsaaclinProvider value={data!}>
               <UI>
                 <Switch>
                   <Route path={RouteType.Home} component={Home} exact />
                   <Route path={RouteType.Error} component={Error} exact />
                 </Switch>
               </UI>
-            </DXYProvider>
+            </IsaaclinProvider>
           );
         }
         if (isLoading) {

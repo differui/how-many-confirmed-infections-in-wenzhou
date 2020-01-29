@@ -7,7 +7,7 @@
   "counter_title_cured": "治愈",
   "counter_title_dead": "死亡",
   "counter_title_suspected": "怀疑",
-  "counter_unit": "确诊",
+  "counter_unit": "例",
   "error_data": "找不到{{location}的统计数据。",
   "error_default": "Ops…也许以后再试试！",
   "footnote_secondary": "上次更新时间 {{updated}}。",

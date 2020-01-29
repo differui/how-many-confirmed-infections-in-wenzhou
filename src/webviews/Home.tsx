@@ -6,12 +6,10 @@ import { Title } from '../components/Title';
 import { WebView } from '../components/WebView';
 import { Counter } from '../components/Counter';
 import { Box } from '@material-ui/core';
-import { Link } from '../components/Link';
 import { Headline } from '../components/Headline';
 import { getNews } from '../services/news';
-import { px2vp } from '../helpers';
 import { Footnote } from '../components/Footnote';
-import { DXYContext } from '../providers/dxy';
+import { IsaaclinContext } from '../providers/isaaclin';
 import { NewsInList } from '../components/NewsInList';
 
 export function Home() {
@@ -28,7 +26,7 @@ export function Home() {
     suspected,
     createTime,
     modifyTime,
-  } = useContext(DXYContext);
+  } = useContext(IsaaclinContext);
 
   return (
     <WebView>
@@ -41,22 +39,26 @@ export function Home() {
           size="lg"
           value={confirmed}
           title={t('counter_title_confirmed')}
+          unit={t('counter_unit')}
         ></Counter>
         <Box display="flex" justifyContent="space-between">
           <Counter
             size="md"
             value={suspected}
             title={t('counter_title_suspected')}
+            unit={t('counter_unit')}
           ></Counter>
           <Counter
             size="md"
             value={cured}
             title={t('counter_title_cured')}
+            unit={t('counter_unit')}
           ></Counter>
           <Counter
             size="md"
             value={dead}
             title={t('counter_title_dead')}
+            unit={t('counter_unit')}
           ></Counter>
         </Box>
         <Headline>{t('news_title')}</Headline>
