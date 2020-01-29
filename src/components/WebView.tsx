@@ -20,7 +20,7 @@ export const WebViewUI = styled.div<WebViewUIProps & ThemeProps>(
       position: 'relative',
 
       '.page': {
-        width: px2vp(310),
+        width: px2vp(300),
         margin: '0 auto',
         height: '100%',
         display: 'flex',

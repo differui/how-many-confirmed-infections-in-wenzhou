@@ -1,6 +1,6 @@
 export const FontWeight = {
   default: 'normal',
-  thin: 100,
+  thin: 300,
   bold: 800,
 };
 
