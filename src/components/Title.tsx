@@ -15,6 +15,7 @@ export function Title({ children }: TitleProps) {
       color: theme.palette.gray,
       lineHeight: 1.3,
       marginTop: px2vp(45),
+      marginBottom: px2vp(70),
       em: {
         color: theme.palette.black,
         fontStyle: 'normal',
