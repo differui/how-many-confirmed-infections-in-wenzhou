@@ -1,3 +1,4 @@
+import i18n from '../i18n';
 import { URL_ISAACLIN } from '../settings';
 
 export async function getAllStatistics() {
@@ -42,7 +43,11 @@ export async function getLatestStatistics() {
   const wz = zj?.cities.find(city => city.cityName === '温州');
 
   if (!zj || !wz) {
-    throw new Error('Fail to find statistics data');
+    throw new Error(
+      i18n.t('error_data', {
+        location: i18n.t('app_title_location'),
+      })
+    );
   }
   return {
     createTime: 0,

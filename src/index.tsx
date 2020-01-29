@@ -13,8 +13,9 @@ import { Error } from './webviews/Error';
 import { RouteType } from './enums';
 import { BASENAME } from './settings';
 import { DefaultTheme } from './theme';
+import { getStatistics } from './services/dxy';
 import { getLatestStatistics } from './services/isaaclin';
-import { IsaaclinProvider } from './providers/isaaclin';
+import { StatisticsProvider } from './providers/Statistics';
 import { Loading } from './webviews/Loading';
 
 function App() {
@@ -28,18 +29,18 @@ function App() {
   };
 
   return (
-    <Async promiseFn={getLatestStatistics}>
+    <Async promiseFn={getStatistics}>
       {({ data, error, isLoading }) => {
         if (data) {
           return (
-            <IsaaclinProvider value={data!}>
+            <StatisticsProvider value={data!}>
               <UI>
                 <Switch>
                   <Route path={RouteType.Home} component={Home} exact />
                   <Route path={RouteType.Error} component={Error} exact />
                 </Switch>
               </UI>
-            </IsaaclinProvider>
+            </StatisticsProvider>
           );
         }
         if (isLoading) {

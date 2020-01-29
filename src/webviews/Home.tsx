@@ -9,7 +9,7 @@ import { Box } from '@material-ui/core';
 import { Headline } from '../components/Headline';
 import { getNews } from '../services/news';
 import { Footnote } from '../components/Footnote';
-import { IsaaclinContext } from '../providers/isaaclin';
+import { StatisticsContext } from '../providers/Statistics';
 import { NewsInList } from '../components/NewsInList';
 
 export function Home() {
@@ -26,7 +26,7 @@ export function Home() {
     suspected,
     createTime,
     modifyTime,
-  } = useContext(IsaaclinContext);
+  } = useContext(StatisticsContext);
 
   return (
     <WebView>
