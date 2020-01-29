@@ -44044,6 +44044,7 @@ module.exports = {
   "counter_title_confirmed": "confirmed",
   "counter_unit": "cases",
   "app_title_location": "WenZhou",
+  "region_name_summary": "Summary",
   "counter_title_suspected": "suspected",
   "counter_title_cured": "cured",
   "counter_title_dead": "dead",
@@ -44064,6 +44065,7 @@ module.exports = {
   "app_title_location": "温州",
   "app_title_prefix": "",
   "app_title_suffix": "有多少确诊感染新型冠状病毒的病例?",
+  "region_name_summary": "总计",
   "counter_title_confirmed": "确诊",
   "counter_title_cured": "治愈",
   "counter_title_dead": "死亡",
@@ -93424,6 +93426,13 @@ function Home() {
       value: region.confirmedCount,
       unit: t('counter_unit')
     });
+  }), react_1.default.createElement(RegionInList_1.RegionInList, {
+    key: "total",
+    name: t('region_name_summary'),
+    value: regions.reduce(function (total, region) {
+      return total + region.confirmedCount;
+    }, 0),
+    unit: t('counter_unit')
   }), react_1.default.createElement(Headline_1.Headline, null, t('review_title')), timeline.map(function (event) {
     return react_1.default.createElement(EventInList_1.EventInList, {
       key: event.updateTime,
@@ -95531,7 +95540,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56301" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57454" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
