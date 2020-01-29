@@ -12,6 +12,7 @@ import { getNews } from '../services/news';
 import { px2vp } from '../helpers';
 import { Footnote } from '../components/Footnote';
 import { DXYContext } from '../providers/dxy';
+import { NewsInList } from '../components/NewsInList';
 
 export function Home() {
   const { t } = useTranslation();
@@ -39,7 +40,7 @@ export function Home() {
         <Counter
           size="lg"
           value={confirmed}
-          title={t('counter_unit')}
+          title={t('counter_title_confirmed')}
         ></Counter>
         <Box display="flex" justifyContent="space-between">
           <Counter
@@ -59,13 +60,8 @@ export function Home() {
           ></Counter>
         </Box>
         <Headline>{t('news_title')}</Headline>
-        {news.map(({ url, title, date }) => (
-          <Box display="flex" alignItems="center" key={url}>
-            <span style={{ paddingRight: px2vp(10) }}>
-              {new Date(date).toLocaleDateString()}
-            </span>
-            <Link href={url}>{title}</Link>
-          </Box>
+        {news.map(item => (
+          <NewsInList key={item.url} {...item}></NewsInList>
         ))}
         <Box flex={1}></Box>
         <Footnote>

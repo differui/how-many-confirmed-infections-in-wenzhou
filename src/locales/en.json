@@ -2,6 +2,7 @@
   "loading": "Loading…",
   "app_title_prefix": "How many confirmed infections in ",
   "app_title_suffix": " ?",
+  "counter_title_confirmed": "confirmed",
   "counter_unit": "cases",
   "app_title_location": "WenZhou",
   "counter_title_suspected": "suspected",

@@ -19,7 +19,6 @@ export function Link(props: LinkProps) {
       overflow: 'hidden',
       textOverflow: 'ellipsis',
       whiteSpace: 'nowrap',
-      margin: '0.5em 0',
       a: {
         color: 'inherit',
       },
