@@ -65,7 +65,6 @@ export function Home() {
         {news.map(item => (
           <NewsInList key={item.url} {...item}></NewsInList>
         ))}
-        <Box flex={1}></Box>
         <Footnote>
           {t('footnote_primary', {
             source: t('source_name'),
