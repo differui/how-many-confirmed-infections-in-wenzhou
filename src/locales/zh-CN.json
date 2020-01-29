@@ -3,6 +3,7 @@
   "app_title_location": "温州",
   "app_title_prefix": "",
   "app_title_suffix": "有多少确诊感染新型冠状病毒的病例?",
+  "region_name_summary": "总计",
   "counter_title_confirmed": "确诊",
   "counter_title_cured": "治愈",
   "counter_title_dead": "死亡",
@@ -14,6 +15,8 @@
   "footnote_secondary": "上次更新时间 {{updated}}。",
   "footnote_primary": "来自 {{source}} 的源数据。",
   "news_title": "更新",
-  "source_name": "丁香园",
-  "review_title": "回顾"
+  "source_name_dxy": "丁香园",
+  "source_name_wzw": "温州网",
+  "review_title": "回顾",
+  "region_title": "区域"
 }

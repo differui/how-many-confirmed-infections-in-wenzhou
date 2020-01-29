@@ -5,6 +5,7 @@
   "counter_title_confirmed": "confirmed",
   "counter_unit": "cases",
   "app_title_location": "WenZhou",
+  "region_name_summary": "Summary",
   "counter_title_suspected": "suspected",
   "counter_title_cured": "cured",
   "counter_title_dead": "dead",
@@ -12,8 +13,10 @@
   "news_title": "updates",
   "footnote_primary": "Source data from {{source}}.",
   "footnote_secondary": "Last updated at {{updated}}.",
-  "source_name": "丁香园",
+  "source_name_dxy": "丁香园",
+  "source_name_wzw": "温州网",
   "error_default": "Ops… Maybe try it later!",
   "error_data": "Can not find statistics data of {{location}}.",
-  "review_title": "reviews"
+  "review_title": "reviews",
+  "region_title": "regions"
 }

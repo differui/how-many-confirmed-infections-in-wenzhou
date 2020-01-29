@@ -1,0 +1,227 @@
+[
+  {
+    "regions": [
+      {
+        "regionName": "鹿城区",
+        "regionShortName": "鹿城",
+        "confirmedCount": 27
+      },
+      {
+        "regionName": "瓯海区",
+        "regionShortName": "瓯海",
+        "confirmedCount": 9
+      },
+      {
+        "regionName": "龙湾区",
+        "regionShortName": "龙湾",
+        "confirmedCount": 3
+      },
+      {
+        "regionName": "洞头区",
+        "regionShortName": "洞头",
+        "confirmedCount": 2
+      },
+      {
+        "regionName": "乐清市",
+        "regionShortName": "乐清",
+        "confirmedCount": 26
+      },
+      {
+        "regionName": "瑞安市",
+        "regionShortName": "瑞安",
+        "confirmedCount": 24
+      },
+      {
+        "regionName": "龙港市",
+        "regionShortName": "龙港",
+        "confirmedCount": 3
+      },
+      {
+        "regionName": "永嘉县",
+        "regionShortName": "永嘉",
+        "confirmedCount": 12
+      },
+      {
+        "regionName": "平阳县",
+        "regionShortName": "平阳",
+        "confirmedCount": 4
+      },
+      {
+        "regionName": "苍南县",
+        "regionShortName": "苍南",
+        "confirmedCount": 1
+      },
+      {
+        "regionName": "文成县",
+        "regionShortName": "文成",
+        "confirmedCount": 1
+      },
+      {
+        "regionName": "泰顺县",
+        "regionShortName": "泰顺",
+        "confirmedCount": 2
+      }
+    ],
+    "updateTime": 1580227200000
+  },
+  {
+    "regions": [
+      {
+        "regionName": "鹿城区",
+        "regionShortName": "鹿城",
+        "confirmedCount": 17
+      },
+      {
+        "regionName": "瓯海区",
+        "regionShortName": "瓯海",
+        "confirmedCount": 3
+      },
+      {
+        "regionName": "龙湾区",
+        "regionShortName": "龙湾",
+        "confirmedCount": 2
+      },
+      {
+        "regionName": "洞头区",
+        "regionShortName": "洞头",
+        "confirmedCount": 1
+      },
+      {
+        "regionName": "乐清市",
+        "regionShortName": "乐清",
+        "confirmedCount": 10
+      },
+      {
+        "regionName": "瑞安市",
+        "regionShortName": "瑞安",
+        "confirmedCount": 13
+      },
+      {
+        "regionName": "永嘉县",
+        "regionShortName": "永嘉",
+        "confirmedCount": 7
+      },
+      {
+        "regionName": "平阳县",
+        "regionShortName": "平阳",
+        "confirmedCount": 4
+      },
+      {
+        "regionName": "苍南县",
+        "regionShortName": "苍南",
+        "confirmedCount": 1
+      },
+      {
+        "regionName": "文成县",
+        "regionShortName": "文成",
+        "confirmedCount": 1
+      },
+      {
+        "regionName": "泰顺县",
+        "regionShortName": "泰顺",
+        "confirmedCount": 1
+      }
+    ],
+    "updateTime": 1580140800000
+  },
+  {
+    "regions": [
+      {
+        "regionName": "鹿城区",
+        "regionShortName": "鹿城",
+        "confirmedCount": 10
+      },
+      {
+        "regionName": "瓯海区",
+        "regionShortName": "瓯海",
+        "confirmedCount": 3
+      },
+      {
+        "regionName": "龙湾区",
+        "regionShortName": "龙湾",
+        "confirmedCount": 2
+      },
+      {
+        "regionName": "洞头区",
+        "regionShortName": "洞头",
+        "confirmedCount": 1
+      },
+      {
+        "regionName": "乐清市",
+        "regionShortName": "乐清",
+        "confirmedCount": 5
+      },
+      {
+        "regionName": "瑞安市",
+        "regionShortName": "瑞安",
+        "confirmedCount": 3
+      },
+      {
+        "regionName": "永嘉县",
+        "regionShortName": "永嘉",
+        "confirmedCount": 4
+      },
+      {
+        "regionName": "平阳县",
+        "regionShortName": "平阳",
+        "confirmedCount": 2
+      },
+      {
+        "regionName": "苍南县",
+        "regionShortName": "苍南",
+        "confirmedCount": 1
+      },
+      {
+        "regionName": "文成县",
+        "regionShortName": "文成",
+        "confirmedCount": 1
+      }
+    ],
+    "updateTime": 1580054400000
+  },
+  {
+    "regions": [
+      {
+        "regionName": "鹿城区",
+        "regionShortName": "鹿城",
+        "confirmedCount": 5
+      },
+      {
+        "regionName": "瓯海区",
+        "regionShortName": "瓯海",
+        "confirmedCount": 3
+      },
+      {
+        "regionName": "龙湾区",
+        "regionShortName": "龙湾",
+        "confirmedCount": 1
+      },
+      {
+        "regionName": "乐清市",
+        "regionShortName": "乐清",
+        "confirmedCount": 2
+      },
+      {
+        "regionName": "瑞安市",
+        "regionShortName": "瑞安",
+        "confirmedCount": 2
+      },
+      {
+        "regionName": "永嘉县",
+        "regionShortName": "永嘉",
+        "confirmedCount": 3
+      },
+      {
+        "regionName": "平阳县",
+        "regionShortName": "平阳",
+        "confirmedCount": 1
+      },
+      {
+        "regionName": "苍南县",
+        "regionShortName": "苍南",
+        "confirmedCount": 1
+      }
+    ],
+    "updateTime": 1579968000000
+  }
+]

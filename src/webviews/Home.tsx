@@ -12,6 +12,8 @@ import { Footnote } from '../components/Footnote';
 import { StatisticsContext } from '../providers/Statistics';
 import { NewsInList } from '../components/NewsInList';
 import { EventInList } from '../components/EventInList';
+import { getLatestRegionStatistics } from '../services/region';
+import { RegionInList } from '../components/RegionInList';
 
 export function Home() {
   const { t } = useTranslation();
@@ -20,6 +22,7 @@ export function Home() {
   });
 
   const news = getNews();
+  const regions = getLatestRegionStatistics();
   const { latest, timeline } = useContext(StatisticsContext);
   const { confirmed, cured, dead, suspected, createTime, modifyTime } = latest;
 
@@ -56,6 +59,25 @@ export function Home() {
             unit={t('counter_unit')}
           />
         </Box>
+        <Headline>{t('region_title')}</Headline>
+        {regions.map(region => (
+          <RegionInList
+            key={region.regionName}
+            name={region.regionName}
+            value={region.confirmedCount}
+            unit={t('counter_unit')}
+          ></RegionInList>
+        ))}
+        <RegionInList
+          key="total"
+          name={t('region_name_summary')}
+          value={regions.reduce(
+            (total, region) => total + region.confirmedCount,
+            0
+          )}
+          unit={t('counter_unit')}
+        ></RegionInList>
+
         <Headline>{t('review_title')}</Headline>
         {timeline.map(event => (
           <EventInList
@@ -71,7 +93,7 @@ export function Home() {
         ))}
         <Footnote>
           {t('footnote_primary', {
-            source: t('source_name'),
+            source: `${t('source_name_dxy')} ${t('source_name_wzw')}`,
           })}
           &nbsp;
           {t('footnote_secondary', {
