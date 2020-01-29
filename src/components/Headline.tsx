@@ -18,6 +18,7 @@ export function Headline(props: HeadlineProps) {
       fontSize: theme.fontSize.lg,
       fontWeight: theme.fontWeight.bold,
       marginTop: px2vp(70),
+      textTransform: 'capitalize',
     };
   });
 
