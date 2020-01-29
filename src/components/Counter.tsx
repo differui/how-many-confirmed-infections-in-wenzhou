@@ -10,7 +10,7 @@ export interface CounterProps {
   title?: string;
   unit?: string;
   size?: 'lg' | 'md';
-  value: number;
+  value: number | string;
 }
 
 export function Counter(props: CounterProps) {
@@ -30,7 +30,7 @@ export function Counter(props: CounterProps) {
       },
       '.unit': {
         color: theme.palette.gray,
-        paddingLeft: px2vp(10),
+        paddingLeft: '1em',
       },
     };
   });
@@ -38,8 +38,10 @@ export function Counter(props: CounterProps) {
   return (
     <CounterUI>
       {title ? <SubTitle>{title}</SubTitle> : null}
-      <span>{thousands(value)}</span>
-      {value > 0 ? <span className="unit">{unit}</span> : null}
+      <span>{typeof value === 'number' ? thousands(value) : '?'}</span>
+      {typeof value === 'number' && value > 0 ? (
+        <span className="unit">{unit}</span>
+      ) : null}
     </CounterUI>
   );
 }

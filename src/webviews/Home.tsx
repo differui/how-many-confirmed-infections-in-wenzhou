@@ -11,6 +11,7 @@ import { getNews } from '../services/news';
 import { Footnote } from '../components/Footnote';
 import { StatisticsContext } from '../providers/Statistics';
 import { NewsInList } from '../components/NewsInList';
+import { EventInList } from '../components/EventInList';
 
 export function Home() {
   const { t } = useTranslation();
@@ -19,14 +20,8 @@ export function Home() {
   });
 
   const news = getNews();
-  const {
-    confirmed,
-    cured,
-    dead,
-    suspected,
-    createTime,
-    modifyTime,
-  } = useContext(StatisticsContext);
+  const { latest, timeline } = useContext(StatisticsContext);
+  const { confirmed, cured, dead, suspected, createTime, modifyTime } = latest;
 
   return (
     <WebView>
@@ -40,27 +35,36 @@ export function Home() {
           value={confirmed}
           title={t('counter_title_confirmed')}
           unit={t('counter_unit')}
-        ></Counter>
+        />
         <Box display="flex" justifyContent="space-between">
           <Counter
             size="md"
-            value={suspected}
+            value="?"
             title={t('counter_title_suspected')}
             unit={t('counter_unit')}
-          ></Counter>
+          />
           <Counter
             size="md"
             value={cured}
             title={t('counter_title_cured')}
             unit={t('counter_unit')}
-          ></Counter>
+          />
           <Counter
             size="md"
             value={dead}
             title={t('counter_title_dead')}
             unit={t('counter_unit')}
-          ></Counter>
+          />
         </Box>
+        <Headline>{t('review_title')}</Headline>
+        {timeline.map(event => (
+          <EventInList
+            key={event.updateTime}
+            date={event.updateTime}
+            value={event.confirmed}
+            unit={t('counter_unit')}
+          ></EventInList>
+        ))}
         <Headline>{t('news_title')}</Headline>
         {news.map(item => (
           <NewsInList key={item.url} {...item}></NewsInList>

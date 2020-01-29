@@ -13,8 +13,8 @@ import { Error } from './webviews/Error';
 import { RouteType } from './enums';
 import { BASENAME } from './settings';
 import { DefaultTheme } from './theme';
-import { getStatistics } from './services/dxy';
-import { getLatestStatistics } from './services/isaaclin';
+// import { getStatistics } from './services/dxy';
+import { getStatistics } from './services/isaaclin';
 import { StatisticsProvider } from './providers/Statistics';
 import { Loading } from './webviews/Loading';
 

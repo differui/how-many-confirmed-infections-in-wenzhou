@@ -13,12 +13,7 @@ export function NewsInList(props: NewsInListProps) {
   const { url, title, date } = props;
 
   return (
-    <Box
-      display="flex"
-      alignItems="center"
-      key={url}
-      style={{ padding: '0.5em 0' }}
-    >
+    <Box display="flex" alignItems="center" style={{ padding: '0.5em 0' }}>
       <span style={{ paddingRight: px2vp(10) }}>
         {new Date(date).toLocaleDateString()}
       </span>

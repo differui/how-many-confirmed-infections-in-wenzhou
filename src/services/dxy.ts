@@ -19,12 +19,15 @@ export async function getStatistics() {
       );
     }
     return {
-      createTime: data.statistics.createTime,
-      modifyTime: data.statistics.modifyTime,
-      confirmed: wz.confirmed,
-      suspected: wz.suspected,
-      dead: wz.dead,
-      cured: wz.cured,
+      latest: {
+        createTime: data.statistics.createTime,
+        modifyTime: data.statistics.modifyTime,
+        confirmed: wz.confirmed,
+        suspected: wz.suspected,
+        dead: wz.dead,
+        cured: wz.cured,
+      },
+      timeline: [],
     };
   } catch (e) {
     throw e;
