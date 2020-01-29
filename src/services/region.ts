@@ -1,5 +1,13 @@
 import REGION from '../assets/region.json';
 
 export function getLatestRegionStatistics() {
-  return REGION[0].regions.sort((a, b) => b.confirmedCount - a.confirmedCount);
+  const { updateTime, regions } = REGION[0];
+
+  if (
+    new Date(updateTime).toLocaleDateString() ===
+    new Date().toLocaleDateString()
+  ) {
+    return regions.sort((a, b) => b.confirmedCount - a.confirmedCount);
+  }
+  return [];
 }
