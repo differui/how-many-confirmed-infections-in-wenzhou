@@ -39,7 +39,7 @@ export function Counter(props: CounterProps) {
     <CounterUI>
       {title ? <SubTitle>{title}</SubTitle> : null}
       <span>{thousands(value)}</span>
-      <span className="unit">{unit}</span>
+      {value > 0 ? <span className="unit">{unit}</span> : null}
     </CounterUI>
   );
 }
