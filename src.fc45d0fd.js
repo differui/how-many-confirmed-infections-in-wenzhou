@@ -44051,10 +44051,12 @@ module.exports = {
   "news_title": "updates",
   "footnote_primary": "Source data from {{source}}.",
   "footnote_secondary": "Last updated at {{updated}}.",
-  "source_name": "丁香园",
+  "source_name_dxy": "丁香园",
+  "source_name_wzw": "温州网",
   "error_default": "Ops… Maybe try it later!",
   "error_data": "Can not find statistics data of {{location}}.",
-  "review_title": "reviews"
+  "review_title": "reviews",
+  "region_title": "regions"
 };
 },{}],"src/locales/zh-CN.json":[function(require,module,exports) {
 module.exports = {
@@ -44074,7 +44076,8 @@ module.exports = {
   "footnote_primary": "来自 {{source}} 的源数据。",
   "news_title": "更新",
   "source_name": "丁香园",
-  "review_title": "回顾"
+  "review_title": "回顾",
+  "region_title": "区域"
 };
 },{}],"src/i18n.ts":[function(require,module,exports) {
 "use strict";
@@ -44113,7 +44116,7 @@ i18next_1.default // load translation using xhr -> see /public/locales (i.e. htt
 .use(react_i18next_1.initReactI18next) // init i18next
 // for all options read: https://www.i18next.com/overview/configuration-options
 .init({
-  fallbackLng: 'en',
+  fallbackLng: 'zh-CN',
   debug: false,
   resources: (_a = {
     en: {
@@ -93053,6 +93056,255 @@ function EventInList(props) {
 }
 
 exports.EventInList = EventInList;
+},{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../helpers":"src/helpers/index.ts"}],"src/assets/region.json":[function(require,module,exports) {
+module.exports = [{
+  "regions": [{
+    "regionName": "鹿城区",
+    "regionShortName": "鹿城",
+    "confirmedCount": 27
+  }, {
+    "regionName": "瓯海区",
+    "regionShortName": "瓯海",
+    "confirmedCount": 9
+  }, {
+    "regionName": "龙湾区",
+    "regionShortName": "龙湾",
+    "confirmedCount": 3
+  }, {
+    "regionName": "洞头区",
+    "regionShortName": "洞头",
+    "confirmedCount": 2
+  }, {
+    "regionName": "乐清市",
+    "regionShortName": "乐清",
+    "confirmedCount": 26
+  }, {
+    "regionName": "瑞安市",
+    "regionShortName": "瑞安",
+    "confirmedCount": 24
+  }, {
+    "regionName": "龙港市",
+    "regionShortName": "龙港",
+    "confirmedCount": 3
+  }, {
+    "regionName": "永嘉县",
+    "regionShortName": "永嘉",
+    "confirmedCount": 12
+  }, {
+    "regionName": "平阳县",
+    "regionShortName": "平阳",
+    "confirmedCount": 4
+  }, {
+    "regionName": "苍南县",
+    "regionShortName": "苍南",
+    "confirmedCount": 1
+  }, {
+    "regionName": "文成县",
+    "regionShortName": "文成",
+    "confirmedCount": 1
+  }, {
+    "regionName": "泰顺县",
+    "regionShortName": "泰顺",
+    "confirmedCount": 2
+  }],
+  "updateTime": 1580227200000
+}, {
+  "regions": [{
+    "regionName": "鹿城区",
+    "regionShortName": "鹿城",
+    "confirmedCount": 17
+  }, {
+    "regionName": "瓯海区",
+    "regionShortName": "瓯海",
+    "confirmedCount": 3
+  }, {
+    "regionName": "龙湾区",
+    "regionShortName": "龙湾",
+    "confirmedCount": 2
+  }, {
+    "regionName": "洞头区",
+    "regionShortName": "洞头",
+    "confirmedCount": 1
+  }, {
+    "regionName": "乐清市",
+    "regionShortName": "乐清",
+    "confirmedCount": 10
+  }, {
+    "regionName": "瑞安市",
+    "regionShortName": "瑞安",
+    "confirmedCount": 13
+  }, {
+    "regionName": "永嘉县",
+    "regionShortName": "永嘉",
+    "confirmedCount": 7
+  }, {
+    "regionName": "平阳县",
+    "regionShortName": "平阳",
+    "confirmedCount": 4
+  }, {
+    "regionName": "苍南县",
+    "regionShortName": "苍南",
+    "confirmedCount": 1
+  }, {
+    "regionName": "文成县",
+    "regionShortName": "文成",
+    "confirmedCount": 1
+  }, {
+    "regionName": "泰顺县",
+    "regionShortName": "泰顺",
+    "confirmedCount": 1
+  }],
+  "updateTime": 1580140800000
+}, {
+  "regions": [{
+    "regionName": "鹿城区",
+    "regionShortName": "鹿城",
+    "confirmedCount": 10
+  }, {
+    "regionName": "瓯海区",
+    "regionShortName": "瓯海",
+    "confirmedCount": 3
+  }, {
+    "regionName": "龙湾区",
+    "regionShortName": "龙湾",
+    "confirmedCount": 2
+  }, {
+    "regionName": "洞头区",
+    "regionShortName": "洞头",
+    "confirmedCount": 1
+  }, {
+    "regionName": "乐清市",
+    "regionShortName": "乐清",
+    "confirmedCount": 5
+  }, {
+    "regionName": "瑞安市",
+    "regionShortName": "瑞安",
+    "confirmedCount": 3
+  }, {
+    "regionName": "永嘉县",
+    "regionShortName": "永嘉",
+    "confirmedCount": 4
+  }, {
+    "regionName": "平阳县",
+    "regionShortName": "平阳",
+    "confirmedCount": 2
+  }, {
+    "regionName": "苍南县",
+    "regionShortName": "苍南",
+    "confirmedCount": 1
+  }, {
+    "regionName": "文成县",
+    "regionShortName": "文成",
+    "confirmedCount": 1
+  }],
+  "updateTime": 1580054400000
+}, {
+  "regions": [{
+    "regionName": "鹿城区",
+    "regionShortName": "鹿城",
+    "confirmedCount": 5
+  }, {
+    "regionName": "瓯海区",
+    "regionShortName": "瓯海",
+    "confirmedCount": 3
+  }, {
+    "regionName": "龙湾区",
+    "regionShortName": "龙湾",
+    "confirmedCount": 1
+  }, {
+    "regionName": "乐清市",
+    "regionShortName": "乐清",
+    "confirmedCount": 2
+  }, {
+    "regionName": "瑞安市",
+    "regionShortName": "瑞安",
+    "confirmedCount": 2
+  }, {
+    "regionName": "永嘉县",
+    "regionShortName": "永嘉",
+    "confirmedCount": 3
+  }, {
+    "regionName": "平阳县",
+    "regionShortName": "平阳",
+    "confirmedCount": 1
+  }, {
+    "regionName": "苍南县",
+    "regionShortName": "苍南",
+    "confirmedCount": 1
+  }],
+  "updateTime": 1579968000000
+}];
+},{}],"src/services/region.ts":[function(require,module,exports) {
+"use strict";
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var region_json_1 = __importDefault(require("../assets/region.json"));
+
+function getLatestRegionStatistics() {
+  return region_json_1.default[0].regions.sort(function (a, b) {
+    return b.confirmedCount - a.confirmedCount;
+  });
+}
+
+exports.getLatestRegionStatistics = getLatestRegionStatistics;
+},{"../assets/region.json":"src/assets/region.json"}],"src/components/RegionInList.tsx":[function(require,module,exports) {
+"use strict";
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var react_1 = __importDefault(require("react"));
+
+var styled_components_1 = __importDefault(require("styled-components"));
+
+var helpers_1 = require("../helpers");
+
+function RegionInList(props) {
+  var value = props.value,
+      name = props.name,
+      unit = props.unit;
+  var EventUI = styled_components_1.default.div(function (props) {
+    var theme = props.theme;
+    return {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      padding: '0.5em 0',
+      '.unit': {
+        color: theme.palette.gray,
+        paddingLeft: '0.3em',
+        fontSize: theme.fontSize.xs
+      }
+    };
+  });
+  return react_1.default.createElement(EventUI, null, react_1.default.createElement("span", {
+    style: {
+      paddingRight: helpers_1.px2vp(10)
+    }
+  }, name), react_1.default.createElement("span", null, react_1.default.createElement("span", {
+    className: "count"
+  }, value), value > 0 ? react_1.default.createElement("span", {
+    className: "unit"
+  }, unit) : null));
+}
+
+exports.RegionInList = RegionInList;
 },{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../helpers":"src/helpers/index.ts"}],"src/webviews/Home.tsx":[function(require,module,exports) {
 "use strict";
 
@@ -93118,12 +93370,17 @@ var NewsInList_1 = require("../components/NewsInList");
 
 var EventInList_1 = require("../components/EventInList");
 
+var region_1 = require("../services/region");
+
+var RegionInList_1 = require("../components/RegionInList");
+
 function Home() {
   var t = react_i18next_1.useTranslation().t;
   var HomeUI = styled_components_1.default.div(function () {
     return {};
   });
   var news = news_1.getNews();
+  var regions = region_1.getLatestRegionStatistics();
 
   var _a = react_1.useContext(Statistics_1.StatisticsContext),
       latest = _a.latest,
@@ -93160,7 +93417,14 @@ function Home() {
     value: dead,
     title: t('counter_title_dead'),
     unit: t('counter_unit')
-  })), react_1.default.createElement(Headline_1.Headline, null, t('review_title')), timeline.map(function (event) {
+  })), react_1.default.createElement(Headline_1.Headline, null, t('region_title')), regions.map(function (region) {
+    return react_1.default.createElement(RegionInList_1.RegionInList, {
+      key: region.regionName,
+      name: region.regionName,
+      value: region.confirmedCount,
+      unit: t('counter_unit')
+    });
+  }), react_1.default.createElement(Headline_1.Headline, null, t('review_title')), timeline.map(function (event) {
     return react_1.default.createElement(EventInList_1.EventInList, {
       key: event.updateTime,
       date: event.updateTime,
@@ -93172,7 +93436,7 @@ function Home() {
       key: item.url
     }, item));
   }), react_1.default.createElement(Footnote_1.Footnote, null, t('footnote_primary', {
-    source: t('source_name')
+    source: t('source_name_dxy') + " " + t('source_name_wzw')
   }), "\xA0", t('footnote_secondary', {
     created: new Date(createTime).toLocaleString(),
     updated: new Date(modifyTime).toLocaleString()
@@ -93180,7 +93444,7 @@ function Home() {
 }
 
 exports.Home = Home;
-},{"react":"node_modules/react/index.js","react-i18next":"node_modules/react-i18next/dist/es/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../components/Title":"src/components/Title.tsx","../components/WebView":"src/components/WebView.tsx","../components/Counter":"src/components/Counter.tsx","@material-ui/core":"node_modules/@material-ui/core/esm/index.js","../components/Headline":"src/components/Headline.tsx","../services/news":"src/services/news.ts","../components/Footnote":"src/components/Footnote.tsx","../providers/Statistics":"src/providers/Statistics.ts","../components/NewsInList":"src/components/NewsInList.tsx","../components/EventInList":"src/components/EventInList.tsx"}],"src/webviews/Error.tsx":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-i18next":"node_modules/react-i18next/dist/es/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../components/Title":"src/components/Title.tsx","../components/WebView":"src/components/WebView.tsx","../components/Counter":"src/components/Counter.tsx","@material-ui/core":"node_modules/@material-ui/core/esm/index.js","../components/Headline":"src/components/Headline.tsx","../services/news":"src/services/news.ts","../components/Footnote":"src/components/Footnote.tsx","../providers/Statistics":"src/providers/Statistics.ts","../components/NewsInList":"src/components/NewsInList.tsx","../components/EventInList":"src/components/EventInList.tsx","../services/region":"src/services/region.ts","../components/RegionInList":"src/components/RegionInList.tsx"}],"src/webviews/Error.tsx":[function(require,module,exports) {
 "use strict";
 
 var __importDefault = this && this.__importDefault || function (mod) {
@@ -95267,7 +95531,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55188" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56301" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
