@@ -44077,7 +44077,8 @@ module.exports = {
   "footnote_secondary": "上次更新时间 {{updated}}。",
   "footnote_primary": "来自 {{source}} 的源数据。",
   "news_title": "更新",
-  "source_name": "丁香园",
+  "source_name_dxy": "丁香园",
+  "source_name_wzw": "温州网",
   "review_title": "回顾",
   "region_title": "区域"
 };
@@ -93063,11 +93064,14 @@ module.exports = [{
   "regions": [{
     "regionName": "鹿城区",
     "regionShortName": "鹿城",
-    "confirmedCount": 27
+    "confirmedCount": 27,
+    "severeCount": 5,
+    "curedCount": 1
   }, {
     "regionName": "瓯海区",
     "regionShortName": "瓯海",
-    "confirmedCount": 9
+    "confirmedCount": 9,
+    "curedCount": 1
   }, {
     "regionName": "龙湾区",
     "regionShortName": "龙湾",
@@ -93079,7 +93083,8 @@ module.exports = [{
   }, {
     "regionName": "乐清市",
     "regionShortName": "乐清",
-    "confirmedCount": 26
+    "confirmedCount": 26,
+    "severeCount": 2
   }, {
     "regionName": "瑞安市",
     "regionShortName": "瑞安",
@@ -93091,7 +93096,8 @@ module.exports = [{
   }, {
     "regionName": "永嘉县",
     "regionShortName": "永嘉",
-    "confirmedCount": 12
+    "confirmedCount": 12,
+    "curedCount": 1
   }, {
     "regionName": "平阳县",
     "regionShortName": "平阳",
@@ -93103,7 +93109,8 @@ module.exports = [{
   }, {
     "regionName": "文成县",
     "regionShortName": "文成",
-    "confirmedCount": 1
+    "confirmedCount": 1,
+    "severeCount": 1
   }, {
     "regionName": "泰顺县",
     "regionShortName": "泰顺",
@@ -93114,7 +93121,8 @@ module.exports = [{
   "regions": [{
     "regionName": "鹿城区",
     "regionShortName": "鹿城",
-    "confirmedCount": 17
+    "confirmedCount": 17,
+    "severeCount": 5
   }, {
     "regionName": "瓯海区",
     "regionShortName": "瓯海",
@@ -93130,7 +93138,8 @@ module.exports = [{
   }, {
     "regionName": "乐清市",
     "regionShortName": "乐清",
-    "confirmedCount": 10
+    "confirmedCount": 10,
+    "severeCount": 1
   }, {
     "regionName": "瑞安市",
     "regionShortName": "瑞安",
@@ -93150,7 +93159,8 @@ module.exports = [{
   }, {
     "regionName": "文成县",
     "regionShortName": "文成",
-    "confirmedCount": 1
+    "confirmedCount": 1,
+    "severeCount": 1
   }, {
     "regionName": "泰顺县",
     "regionShortName": "泰顺",
@@ -93161,7 +93171,8 @@ module.exports = [{
   "regions": [{
     "regionName": "鹿城区",
     "regionShortName": "鹿城",
-    "confirmedCount": 10
+    "confirmedCount": 10,
+    "severeCount": 3
   }, {
     "regionName": "瓯海区",
     "regionShortName": "瓯海",
@@ -93177,7 +93188,8 @@ module.exports = [{
   }, {
     "regionName": "乐清市",
     "regionShortName": "乐清",
-    "confirmedCount": 5
+    "confirmedCount": 5,
+    "severeCount": 1
   }, {
     "regionName": "瑞安市",
     "regionShortName": "瑞安",
@@ -93252,9 +93264,17 @@ Object.defineProperty(exports, "__esModule", {
 var region_json_1 = __importDefault(require("../assets/region.json"));
 
 function getLatestRegionStatistics() {
-  return region_json_1.default[0].regions.sort(function (a, b) {
-    return b.confirmedCount - a.confirmedCount;
-  });
+  var _a = region_json_1.default[0],
+      updateTime = _a.updateTime,
+      regions = _a.regions;
+
+  if (new Date(updateTime).toLocaleDateString() === new Date().toLocaleDateString()) {
+    return regions.sort(function (a, b) {
+      return b.confirmedCount - a.confirmedCount;
+    });
+  }
+
+  return [];
 }
 
 exports.getLatestRegionStatistics = getLatestRegionStatistics;
@@ -95540,7 +95560,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58306" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59127" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
