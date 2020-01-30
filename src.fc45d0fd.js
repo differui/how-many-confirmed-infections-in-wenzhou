@@ -93064,6 +93064,65 @@ module.exports = [{
   "regions": [{
     "regionName": "鹿城区",
     "regionShortName": "鹿城",
+    "confirmedCount": 29,
+    "severeCount": 3,
+    "curedCount": 1
+  }, {
+    "regionName": "瓯海区",
+    "regionShortName": "瓯海",
+    "confirmedCount": 12,
+    "severeCount": 1,
+    "curedCount": 1
+  }, {
+    "regionName": "龙湾区",
+    "regionShortName": "龙湾",
+    "confirmedCount": 5
+  }, {
+    "regionName": "洞头区",
+    "regionShortName": "洞头",
+    "confirmedCount": 2
+  }, {
+    "regionName": "乐清市",
+    "regionShortName": "乐清",
+    "confirmedCount": 53,
+    "severeCount": 3
+  }, {
+    "regionName": "瑞安市",
+    "regionShortName": "瑞安",
+    "confirmedCount": 37
+  }, {
+    "regionName": "龙港市",
+    "regionShortName": "龙港",
+    "confirmedCount": 4
+  }, {
+    "regionName": "永嘉县",
+    "regionShortName": "永嘉",
+    "confirmedCount": 14,
+    "severeCount": 1,
+    "curedCount": 1
+  }, {
+    "regionName": "平阳县",
+    "regionShortName": "平阳",
+    "confirmedCount": 7
+  }, {
+    "regionName": "苍南县",
+    "regionShortName": "苍南",
+    "confirmedCount": 5
+  }, {
+    "regionName": "文成县",
+    "regionShortName": "文成",
+    "confirmedCount": 1,
+    "severeCount": 1
+  }, {
+    "regionName": "泰顺县",
+    "regionShortName": "泰顺",
+    "confirmedCount": 3
+  }],
+  "updateTime": 1580313600000
+}, {
+  "regions": [{
+    "regionName": "鹿城区",
+    "regionShortName": "鹿城",
     "confirmedCount": 27,
     "severeCount": 5,
     "curedCount": 1
@@ -95619,7 +95678,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62113" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50389" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
