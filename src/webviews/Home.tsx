@@ -14,6 +14,8 @@ import { NewsInList } from '../components/NewsInList';
 import { EventInList } from '../components/EventInList';
 import { getLatestRegionStatistics } from '../services/region';
 import { RegionInList } from '../components/RegionInList';
+import { getFriends } from '../services/firends';
+import { FirendInList } from '../components/FriendInList';
 
 export function Home() {
   const { t } = useTranslation();
@@ -22,6 +24,7 @@ export function Home() {
   });
 
   const news = getNews();
+  const friends = getFriends();
   const regions = getLatestRegionStatistics();
   const { latest, timeline } = useContext(StatisticsContext);
   const { confirmed, cured, dead, suspected, createTime, modifyTime } = latest;
@@ -95,9 +98,15 @@ export function Home() {
         {news.map(item => (
           <NewsInList key={item.url} {...item}></NewsInList>
         ))}
+        <Headline>{t('friends_title')}</Headline>
+        {friends.map(friend => (
+          <FirendInList key={friend.url} {...friend}></FirendInList>
+        ))}
         <Footnote>
           {t('footnote_primary', {
-            source: `${t('source_name_dxy')} ${t('source_name_wzw')}`,
+            source: `${t('source_name_dxy')} ${t('source_name_wzw')} ${t(
+              'source_name_wzfb'
+            )}`,
           })}
           &nbsp;
           {t('footnote_secondary', {

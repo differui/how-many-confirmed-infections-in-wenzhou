@@ -15,8 +15,10 @@
   "footnote_secondary": "Last updated at {{updated}}.",
   "source_name_dxy": "丁香园",
   "source_name_wzw": "温州网",
+  "source_name_wzfb": "温州发布",
   "error_default": "Ops… Maybe try it later!",
   "error_data": "Can not find statistics data of {{location}}.",
   "review_title": "reviews",
-  "region_title": "regions"
+  "region_title": "regions",
+  "friends_title": "Friends' Links"
 }
