@@ -16,6 +16,7 @@ import { getLatestRegionStatistics } from '../services/region';
 import { RegionInList } from '../components/RegionInList';
 import { getFriends } from '../services/firends';
 import { FirendInList } from '../components/FriendInList';
+import { WenZhouMap } from '../components/WenZhouMap';
 
 export function Home() {
   const { t } = useTranslation();
@@ -79,29 +80,10 @@ export function Home() {
             />
           ) : null}
         </Box>
-        {regions.length ? (
-          <>
-            {' '}
-            <Headline>{t('region_title')}</Headline>
-            {regions.map(region => (
-              <RegionInList
-                key={region.regionName}
-                name={region.regionName}
-                value={region.confirmedCount}
-                unit={t('counter_unit')}
-              ></RegionInList>
-            ))}
-            <RegionInList
-              key="total"
-              name={t('region_name_summary')}
-              value={regions.reduce(
-                (total, region) => total + region.confirmedCount,
-                0
-              )}
-              unit={t('counter_unit')}
-            ></RegionInList>
-          </>
-        ) : null}
+
+        <Headline>{t('region_title')}</Headline>
+        <WenZhouMap></WenZhouMap>
+
         <Headline>{t('review_title')}</Headline>
         {timeline.map(event => (
           <EventInList

@@ -23,4 +23,9 @@ export const GlobalStyle = createGlobalStyle((props: GlobalStyleProps) => ({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
+  // remove marker of leaflet
+  '.leaflet-control-attribution' {
+    display: 'none',
+  }
 }));
