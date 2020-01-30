@@ -5,16 +5,18 @@ import { ThemeProps } from '../theme';
 import { px2vp } from '../helpers';
 import { SubTitle } from './SubTitle';
 import { thousands } from '../helpers/formatter';
+import { Box } from '@material-ui/core';
 
 export interface CounterProps {
   title?: string;
   unit?: string;
   size?: 'lg' | 'md';
+  sign?: boolean;
   value: number | string;
 }
 
 export function Counter(props: CounterProps) {
-  const { value, title, unit, size = 'md' } = props;
+  const { value, title, unit, sign = false, size = 'md' } = props;
   const CounterUI = styled.div<ThemeProps>((props: ThemeProps) => {
     const { theme } = props;
 
@@ -38,7 +40,13 @@ export function Counter(props: CounterProps) {
   return (
     <CounterUI>
       {title ? <SubTitle>{title}</SubTitle> : null}
-      <span>{typeof value === 'number' ? thousands(value) : '?'}</span>
+      <Box display="inline-flex" alignItems="center">
+        {sign && typeof value === 'number' ? (
+          <span>{Math.sign(value) > 0 ? '+' : '-'}</span>
+        ) : null}
+        <span>{typeof value === 'number' ? thousands(value) : '?'}</span>
+      </Box>
+
       {typeof value === 'number' && value > 0 ? (
         <span className="unit">{unit}</span>
       ) : null}
