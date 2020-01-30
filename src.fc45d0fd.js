@@ -44048,12 +44048,13 @@ module.exports = {
   "counter_title_suspected": "suspected",
   "counter_title_cured": "cured",
   "counter_title_dead": "dead",
-  "counter_title_add": "new",
+  "counter_title_new": "new",
   "news_title": "updates",
   "footnote_primary": "Source data from {{source}}.",
   "footnote_secondary": "Last updated at {{updated}}.",
   "source_name_dxy": "丁香园",
-  "source_name_wzfb": "温州网",
+  "source_name_wzw": "温州网",
+  "source_name_wzfb": "温州发布",
   "error_default": "Ops… Maybe try it later!",
   "error_data": "Can not find statistics data of {{location}}.",
   "review_title": "reviews",
@@ -44064,13 +44065,13 @@ module.exports = {
 module.exports = {
   "loading": "正在加载…",
   "app_title_location": "温州",
-  "app_title_prefix": "",
+  "app_title_prefix": "目前",
   "app_title_suffix": "有多少确诊感染新型冠状病毒的病例?",
   "region_name_summary": "总计",
   "counter_title_confirmed": "确诊",
   "counter_title_cured": "治愈",
   "counter_title_dead": "死亡",
-  "counter_title_add": "昨日新增",
+  "counter_title_new": "新增",
   "counter_title_suspected": "疑似",
   "counter_unit": "例",
   "error_data": "找不到{{location}的统计数据。",
@@ -44079,6 +44080,7 @@ module.exports = {
   "footnote_primary": "来自 {{source}} 的源数据。",
   "news_title": "更新",
   "source_name_dxy": "丁香园",
+  "source_name_wzw": "温州网",
   "source_name_wzfb": "温州发布",
   "review_title": "回顾",
   "region_title": "区域",
@@ -44121,6 +44123,7 @@ i18next_1.default // load translation using xhr -> see /public/locales (i.e. htt
 .use(react_i18next_1.initReactI18next) // init i18next
 // for all options read: https://www.i18next.com/overview/configuration-options
 .init({
+  lng: 'zh-CN',
   fallbackLng: 'zh-CN',
   debug: false,
   resources: (_a = {
@@ -44163,6 +44166,10 @@ exports.GlobalStyle = styled_components_1.createGlobalStyle(function (props) {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center'
+    },
+    // remove marker of leaflet
+    '.leaflet-control-attribution': {
+      display: 'none'
     }
   };
 });
@@ -44261,7 +44268,7 @@ function Title(_a) {
       em: {
         color: theme.palette.black,
         fontStyle: 'normal',
-        padding: '0 0 0 0.1em'
+        padding: '0 0.1em'
       }
     };
   });
@@ -92774,12 +92781,16 @@ var SubTitle_1 = require("./SubTitle");
 
 var formatter_1 = require("../helpers/formatter");
 
+var core_1 = require("@material-ui/core");
+
 function Counter(props) {
   var value = props.value,
       title = props.title,
       unit = props.unit,
-      _a = props.size,
-      size = _a === void 0 ? 'md' : _a;
+      _a = props.sign,
+      sign = _a === void 0 ? false : _a,
+      _b = props.size,
+      size = _b === void 0 ? 'md' : _b;
   var CounterUI = styled_components_1.default.div(function (props) {
     var theme = props.theme;
     return {
@@ -92797,13 +92808,16 @@ function Counter(props) {
       }
     };
   });
-  return react_1.default.createElement(CounterUI, null, title ? react_1.default.createElement(SubTitle_1.SubTitle, null, title) : null, react_1.default.createElement("span", null, typeof value === 'number' ? formatter_1.thousands(value) : '?'), typeof value === 'number' && value > 0 ? react_1.default.createElement("span", {
+  return react_1.default.createElement(CounterUI, null, title ? react_1.default.createElement(SubTitle_1.SubTitle, null, title) : null, react_1.default.createElement(core_1.Box, {
+    display: "inline-flex",
+    alignItems: "center"
+  }, sign && typeof value === 'number' ? react_1.default.createElement("span", null, Math.sign(value) > 0 ? '+' : '-') : null, react_1.default.createElement("span", null, typeof value === 'number' ? formatter_1.thousands(value) : '?')), typeof value === 'number' && value > 0 ? react_1.default.createElement("span", {
     className: "unit"
   }, unit) : null);
 }
 
 exports.Counter = Counter;
-},{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../helpers":"src/helpers/index.ts","./SubTitle":"src/components/SubTitle.tsx","../helpers/formatter":"src/helpers/formatter.ts"}],"src/components/Headline.tsx":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../helpers":"src/helpers/index.ts","./SubTitle":"src/components/SubTitle.tsx","../helpers/formatter":"src/helpers/formatter.ts","@material-ui/core":"node_modules/@material-ui/core/esm/index.js"}],"src/components/Headline.tsx":[function(require,module,exports) {
 "use strict";
 
 var __importDefault = this && this.__importDefault || function (mod) {
@@ -92931,7 +92945,8 @@ exports.StatisticsContext = react_1.createContext({
     confirmed: 0,
     suspected: 0,
     dead: 0,
-    cured: 0
+    cured: 0,
+    delta: 0
   },
   timeline: []
 });
@@ -93539,12 +93554,13 @@ function Home() {
   var confirmed = latest.confirmed,
       cured = latest.cured,
       dead = latest.dead,
+      delta = latest.delta,
       suspected = latest.suspected,
       createTime = latest.createTime,
       modifyTime = latest.modifyTime;
   return react_1.default.createElement(WebView_1.WebView, null, react_1.default.createElement(HomeUI, {
     className: "page"
-  }, react_1.default.createElement(Title_1.Title, null, t('app_title_prefix'), " ", react_1.default.createElement("em", null, t('app_title_location')), t('app_title_suffix')), react_1.default.createElement(Counter_1.Counter, {
+  }, react_1.default.createElement(Title_1.Title, null, react_1.default.createElement("span", null, t('app_title_prefix')), react_1.default.createElement("em", null, t('app_title_location')), react_1.default.createElement("span", null, t('app_title_suffix'))), react_1.default.createElement(Counter_1.Counter, {
     size: "lg",
     value: confirmed,
     title: t('counter_title_confirmed'),
@@ -93567,7 +93583,12 @@ function Home() {
     value: dead,
     title: t('counter_title_dead'),
     unit: t('counter_unit')
-  })), regions.length ? react_1.default.createElement(react_1.default.Fragment, null, ' ', react_1.default.createElement(Headline_1.Headline, null, t('region_title')), regions.map(function (region) {
+  }), delta > 0 ? react_1.default.createElement(Counter_1.Counter, {
+    size: "md",
+    value: delta,
+    title: t('counter_title_new'),
+    unit: t('counter_unit')
+  }) : null), regions.length ? react_1.default.createElement(react_1.default.Fragment, null, ' ', react_1.default.createElement(Headline_1.Headline, null, t('region_title')), regions.map(function (region) {
     return react_1.default.createElement(RegionInList_1.RegionInList, {
       key: region.regionName,
       name: region.regionName,
@@ -93597,7 +93618,7 @@ function Home() {
       key: friend.url
     }, friend));
   }), react_1.default.createElement(Footnote_1.Footnote, null, t('footnote_primary', {
-    source: t('source_name_dxy') + " " + t('source_name_wzfb')
+    source: t('source_name_dxy') + " " + t('source_name_wzw') + " " + t('source_name_wzfb')
   }), "\xA0", t('footnote_secondary', {
     created: new Date(createTime).toLocaleString(),
     updated: new Date(modifyTime).toLocaleString()
@@ -93664,6 +93685,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.BASENAME = "development" === 'development' ? '' : 'how-many-confirmed-infections-in-wenzhou';
 exports.URL_ISAACLIN = 'https://lab.isaaclin.cn/nCoV/api/area?province=浙江省&latest=0';
+exports.MAP_LAT = 27.9938;
+exports.MAP_LNG = 120.4394;
+exports.MAP_ZOOM_LEVEL = 7.5;
 },{}],"src/theme.ts":[function(require,module,exports) {
 "use strict";
 
@@ -95263,6 +95287,94 @@ module.exports = {
     }],
     "country": "中国",
     "updateTime": 1580346673523
+  }, {
+    "createTime": 1579546399000,
+    "modifyTime": 1579617110000,
+    "provinceName": "浙江省",
+    "operator": "heyanan",
+    "country": "中国",
+    "confirmedCount": 5,
+    "curedCount": 0,
+    "deadCount": 0,
+    "suspectedCount": 16,
+    "updateTime": 1579634890131,
+    "provinceShortName": "浙江"
+  }, {
+    "createTime": 1579546399000,
+    "modifyTime": 1579669569000,
+    "provinceName": "浙江省",
+    "operator": "heyanan",
+    "country": "中国",
+    "confirmedCount": 10,
+    "curedCount": 0,
+    "deadCount": 0,
+    "suspectedCount": 0,
+    "updateTime": 1579669636288,
+    "provinceShortName": "浙江"
+  }, {
+    "createTime": 1579546399000,
+    "modifyTime": 1579689819000,
+    "provinceName": "浙江省",
+    "operator": "heyanan",
+    "country": "中国",
+    "confirmedCount": 10,
+    "curedCount": 0,
+    "deadCount": 0,
+    "suspectedCount": 0,
+    "updateTime": 1579689896981,
+    "provinceShortName": "浙江"
+  }, {
+    "createTime": 1579546399000,
+    "modifyTime": 1579700413000,
+    "provinceName": "浙江省",
+    "provinceShortName": "浙江",
+    "operator": "heyanan",
+    "country": "中国",
+    "confirmedCount": 10,
+    "curedCount": 0,
+    "deadCount": 0,
+    "suspectedCount": 0,
+    "updateTime": 1579700466316
+  }, {
+    "createTime": 1579546399000,
+    "modifyTime": 1579759106000,
+    "provinceName": "浙江省",
+    "provinceShortName": "浙江",
+    "operator": "heyanan",
+    "country": "中国",
+    "confirmedCount": 27,
+    "curedCount": 0,
+    "deadCount": 0,
+    "suspectedCount": 0,
+    "updateTime": 1579759192287
+  }, {
+    "createTime": 1579546399000,
+    "modifyTime": 1579759106000,
+    "provinceName": "浙江省",
+    "provinceShortName": "浙江",
+    "cityName": "",
+    "confirmedCount": 27,
+    "suspectedCount": 0,
+    "curedCount": 0,
+    "deadCount": 0,
+    "comment": "",
+    "operator": "heyanan",
+    "country": "中国",
+    "updateTime": 1579807557295
+  }, {
+    "createTime": 1579546399000,
+    "modifyTime": 1579759106000,
+    "provinceName": "浙江省",
+    "provinceShortName": "浙江",
+    "cityName": "",
+    "confirmedCount": 27,
+    "suspectedCount": 0,
+    "curedCount": 0,
+    "deadCount": 0,
+    "comment": "",
+    "operator": "heyanan",
+    "country": "中国",
+    "updateTime": 1579807923804
   }],
   "success": true
 };
@@ -95444,6 +95556,30 @@ var settings_1 = require("../settings");
 
 var isaaclin_json_1 = __importDefault(require("../assets/isaaclin.json"));
 
+function filterResults(results) {
+  var dateMap = new Map();
+  results.forEach(function (item) {
+    var _a;
+
+    var updateTime = item.updateTime,
+        confirmedCount = item.confirmedCount;
+    var dateStr = new Date(updateTime).toLocaleDateString();
+
+    if (!dateMap.has(dateStr) || ((_a = dateMap.get(dateStr)) === null || _a === void 0 ? void 0 : _a.confirmedCount) < confirmedCount) {
+      dateMap.set(dateStr, item);
+    }
+  });
+  return Array.from(dateMap.values());
+}
+
+function sortResults(results) {
+  return results.sort(function (a, b) {
+    var _a, _b, _c, _d;
+
+    return (_b = (_a = b) === null || _a === void 0 ? void 0 : _a.updateTime, _b !== null && _b !== void 0 ? _b : 0) - (_d = (_c = a) === null || _c === void 0 ? void 0 : _c.updateTime, _d !== null && _d !== void 0 ? _d : 0);
+  });
+}
+
 function getCachedStatistics() {
   return isaaclin_json_1.default.results;
 }
@@ -95484,16 +95620,17 @@ function getNetworkStatistics() {
   });
 }
 
-function getLatestStatistics(results) {
-  var _a;
+function getLatestStatistics(statistics) {
+  var _a, _b; // today
 
-  var statistics = results.sort(function (a, b) {
-    var _a, _b, _c, _d;
 
-    return (_b = (_a = b) === null || _a === void 0 ? void 0 : _a.updateTime, _b !== null && _b !== void 0 ? _b : 0) - (_d = (_c = a) === null || _c === void 0 ? void 0 : _c.updateTime, _d !== null && _d !== void 0 ? _d : 0);
-  });
   var zj = statistics[0];
   var wz = (_a = zj) === null || _a === void 0 ? void 0 : _a.cities.find(function (city) {
+    return city.cityName === '温州';
+  }); // yesterday
+
+  var zjYday = statistics[1];
+  var wzYday = (_b = zjYday) === null || _b === void 0 ? void 0 : _b.cities.find(function (city) {
     return city.cityName === '温州';
   });
 
@@ -95509,24 +95646,21 @@ function getLatestStatistics(results) {
     confirmed: wz.confirmedCount,
     suspected: wz.suspectedCount,
     dead: wz.deadCount,
-    cured: wz.curedCount
+    cured: wz.curedCount,
+    delta: wzYday ? wz.confirmedCount - wzYday.confirmedCount : 0
   };
 }
 
-function getTimelineStatistics(results) {
-  var statistics = results.sort(function (a, b) {
-    var _a, _b, _c, _d;
-
-    return (_b = (_a = b) === null || _a === void 0 ? void 0 : _a.updateTime, _b !== null && _b !== void 0 ? _b : 0) - (_d = (_c = a) === null || _c === void 0 ? void 0 : _c.updateTime, _d !== null && _d !== void 0 ? _d : 0);
-  });
-  var dateMap = new Map();
+function getTimelineStatistics(statistics) {
   return statistics.map(function (item) {
-    var wz = item.cities.find(function (city) {
+    var _a;
+
+    var wz = (_a = item.cities) === null || _a === void 0 ? void 0 : _a.find(function (city) {
       return city.cityName === '温州';
     });
 
     if (!wz) {
-      return undefined;
+      return;
     }
 
     return __assign(__assign({}, wz), {
@@ -95537,41 +95671,27 @@ function getTimelineStatistics(results) {
       updateTime: item.updateTime,
       confirmed: item.confirmedCount
     } : item;
-  }).filter(function (item) {
-    if (!item) {
-      return false;
-    }
-
-    var updateTime = item.updateTime,
-        confirmed = item.confirmed;
-    var dateStr = new Date(updateTime).toLocaleDateString();
-
-    if (!dateMap.has(dateStr) || dateMap.get(dateStr) < confirmed) {
-      dateMap.set(dateStr, confirmed);
-      return true;
-    }
-
-    return false;
-  });
+  }).filter(Boolean);
 }
 
 function getStatistics() {
   return __awaiter(this, void 0, void 0, function () {
-    var results;
+    var results, statistics;
     return __generator(this, function (_a) {
       switch (_a.label) {
         case 0:
           return [4
           /*yield*/
-          , getNetworkStatistics()];
+          , "development" === 'development' ? getCachedStatistics() : getNetworkStatistics()];
 
         case 1:
           results = _a.sent();
+          statistics = sortResults(filterResults(results));
           return [2
           /*return*/
           , {
-            latest: getLatestStatistics(results),
-            timeline: getTimelineStatistics(results)
+            latest: getLatestStatistics(statistics),
+            timeline: getTimelineStatistics(statistics)
           }];
       }
     });
@@ -95751,7 +95871,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54673" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54330" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
