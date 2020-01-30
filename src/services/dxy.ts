@@ -26,6 +26,7 @@ export async function getStatistics() {
         suspected: wz.suspected,
         dead: wz.dead,
         cured: wz.cured,
+        delta: 0,
       },
       timeline: [],
     };

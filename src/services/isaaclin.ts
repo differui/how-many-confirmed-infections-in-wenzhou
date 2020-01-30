@@ -2,6 +2,24 @@ import i18n from '../i18n';
 import { URL_ISAACLIN } from '../settings';
 import STATISTICS from '../assets/isaaclin.json';
 
+function filterResults(results: typeof STATISTICS.results) {
+  const dateMap = new Map<string, number>();
+
+  return results.filter(({ updateTime, confirmedCount }) => {
+    const dateStr = new Date(updateTime).toLocaleDateString();
+
+    if (!dateMap.has(dateStr) || dateMap.get(dateStr)! < confirmedCount) {
+      dateMap.set(dateStr, confirmedCount);
+      return true;
+    }
+    return false;
+  });
+}
+
+function sortResults(results: typeof STATISTICS.results) {
+  return results.sort((a, b) => (b?.updateTime ?? 0) - (a?.updateTime ?? 0));
+}
+
 function getCachedStatistics() {
   return STATISTICS.results;
 }
@@ -40,11 +58,15 @@ async function getNetworkStatistics() {
 }
 
 function getLatestStatistics(results: typeof STATISTICS.results) {
-  const statistics = results.sort(
-    (a, b) => (b?.updateTime ?? 0) - (a?.updateTime ?? 0)
-  );
+  const statistics = sortResults(filterResults(results));
+
+  // today
   const zj = statistics[0];
   const wz = zj?.cities.find(city => city.cityName === '温州');
+
+  // yesterday
+  const zjYday = statistics[1];
+  const wzYday = zjYday?.cities.find(city => city.cityName === '温州');
 
   if (!zj || !wz) {
     throw new Error(
@@ -60,14 +82,12 @@ function getLatestStatistics(results: typeof STATISTICS.results) {
     suspected: wz.suspectedCount!,
     dead: wz.deadCount!,
     cured: wz.curedCount!,
+    delta: wzYday ? wz.confirmedCount - wzYday.confirmedCount : 0,
   };
 }
 
 function getTimelineStatistics(results: typeof STATISTICS.results) {
-  const statistics = results.sort(
-    (a, b) => (b?.updateTime ?? 0) - (a?.updateTime ?? 0)
-  );
-  const dateMap = new Map<string, number>();
+  const statistics = sortResults(filterResults(results));
 
   return statistics
     .map(item => {
@@ -88,27 +108,16 @@ function getTimelineStatistics(results: typeof STATISTICS.results) {
             confirmed: item.confirmedCount,
           }
         : item
-    )
-    .filter(item => {
-      if (!item) {
-        return false;
-      }
-      const { updateTime, confirmed } = item;
-      const dateStr = new Date(updateTime).toLocaleDateString();
-
-      if (!dateMap.has(dateStr) || dateMap.get(dateStr)! < confirmed) {
-        dateMap.set(dateStr, confirmed);
-        return true;
-      }
-      return false;
-    }) as {
+    ) as {
     updateTime: number;
     confirmed: number;
   }[];
 }
 
 export async function getStatistics() {
-  const results = await getNetworkStatistics();
+  const results = await (process.env.NODE_ENV === 'development'
+    ? getCachedStatistics()
+    : getNetworkStatistics());
 
   return {
     latest: getLatestStatistics(results),

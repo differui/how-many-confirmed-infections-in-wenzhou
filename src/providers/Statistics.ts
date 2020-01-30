@@ -12,6 +12,7 @@ export const StatisticsContext = createContext<
     suspected: 0,
     dead: 0,
     cured: 0,
+    delta: 0,
   },
   timeline: [],
 });

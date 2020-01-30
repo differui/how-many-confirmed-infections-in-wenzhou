@@ -9,7 +9,7 @@
   "counter_title_suspected": "suspected",
   "counter_title_cured": "cured",
   "counter_title_dead": "dead",
-  "counter_title_add": "new",
+  "counter_title_new": "new",
   "news_title": "updates",
   "footnote_primary": "Source data from {{source}}.",
   "footnote_secondary": "Last updated at {{updated}}.",

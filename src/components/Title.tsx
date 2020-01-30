@@ -19,7 +19,7 @@ export function Title({ children }: TitleProps) {
       em: {
         color: theme.palette.black,
         fontStyle: 'normal',
-        padding: '0 0 0 0.1em',
+        padding: '0 0.1em',
       },
     };
   });

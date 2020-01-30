@@ -27,14 +27,23 @@ export function Home() {
   const friends = getFriends();
   const regions = getLatestRegionStatistics();
   const { latest, timeline } = useContext(StatisticsContext);
-  const { confirmed, cured, dead, suspected, createTime, modifyTime } = latest;
+  const {
+    confirmed,
+    cured,
+    dead,
+    delta,
+    suspected,
+    createTime,
+    modifyTime,
+  } = latest;
 
   return (
     <WebView>
       <HomeUI className="page">
         <Title>
-          {t('app_title_prefix')} <em>{t('app_title_location')}</em>
-          {t('app_title_suffix')}
+          <span>{t('app_title_prefix')}</span>
+          <em>{t('app_title_location')}</em>
+          <span>{t('app_title_suffix')}</span>
         </Title>
         <Counter
           size="lg"
@@ -61,6 +70,14 @@ export function Home() {
             title={t('counter_title_dead')}
             unit={t('counter_unit')}
           />
+          {delta > 0 ? (
+            <Counter
+              size="md"
+              value={delta}
+              title={t('counter_title_new')}
+              unit={t('counter_unit')}
+            />
+          ) : null}
         </Box>
         {regions.length ? (
           <>
