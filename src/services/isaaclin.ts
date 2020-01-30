@@ -3,7 +3,7 @@ import { URL_ISAACLIN } from '../settings';
 import STATISTICS from '../assets/isaaclin.json';
 
 function getCachedStatistics() {
-  return STATISTICS;
+  return STATISTICS.results;
 }
 
 async function getNetworkStatistics() {
@@ -39,8 +39,8 @@ async function getNetworkStatistics() {
   return results;
 }
 
-async function getLatestStatistics() {
-  const statistics = getCachedStatistics().results.sort(
+function getLatestStatistics(results: typeof STATISTICS.results) {
+  const statistics = results.sort(
     (a, b) => (b?.updateTime ?? 0) - (a?.updateTime ?? 0)
   );
   const zj = statistics[0];
@@ -63,8 +63,8 @@ async function getLatestStatistics() {
   };
 }
 
-async function getTimelineStatistics() {
-  const statistics = getCachedStatistics().results.sort(
+function getTimelineStatistics(results: typeof STATISTICS.results) {
+  const statistics = results.sort(
     (a, b) => (b?.updateTime ?? 0) - (a?.updateTime ?? 0)
   );
   const dateMap = new Map<string, number>();
@@ -108,8 +108,10 @@ async function getTimelineStatistics() {
 }
 
 export async function getStatistics() {
+  const results = await getNetworkStatistics();
+
   return {
-    latest: await getLatestStatistics(),
-    timeline: await getTimelineStatistics(),
+    latest: getLatestStatistics(results),
+    timeline: getTimelineStatistics(results),
   };
 }
