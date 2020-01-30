@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../../.nvm/versions/node/v10.16.3/lib/node_modules/parcel/src/builtins/bundle-url.js":[function(require,module,exports) {
+})({"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -149,7 +149,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],"../../.nvm/versions/node/v10.16.3/lib/node_modules/parcel/src/builtins/css-loader.js":[function(require,module,exports) {
+},{}],"node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -184,13 +184,13 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../../.nvm/versions/node/v10.16.3/lib/node_modules/parcel/src/builtins/bundle-url.js"}],"node_modules/normalize.css/normalize.css":[function(require,module,exports) {
+},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"node_modules/normalize.css/normalize.css":[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       
-},{"_css_loader":"../../.nvm/versions/node/v10.16.3/lib/node_modules/parcel/src/builtins/css-loader.js"}],"node_modules/object-assign/index.js":[function(require,module,exports) {
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/object-assign/index.js":[function(require,module,exports) {
 /*
 object-assign
 (c) Sindre Sorhus
@@ -32735,7 +32735,7 @@ var _react = _interopRequireWildcard(require("react"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 /* istanbul ignore file */
 
@@ -34848,7 +34848,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 var MAX_SIGNED_31_BIT_INT = 1073741823;
 
@@ -37489,7 +37489,7 @@ var index = (0, _memoize.default)(function (prop) {
 );
 var _default = index;
 exports.default = _default;
-},{"@emotion/memoize":"node_modules/@emotion/memoize/dist/memoize.browser.esm.js"}],"../../.nvm/versions/node/v10.16.3/lib/node_modules/parcel/node_modules/process/browser.js":[function(require,module,exports) {
+},{"@emotion/memoize":"node_modules/@emotion/memoize/dist/memoize.browser.esm.js"}],"node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {}; // cached from whatever global is present so that test runners that stub it
@@ -37731,7 +37731,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _extends() {
   _extends = Object.assign || function (target) {
@@ -39613,7 +39613,7 @@ if ("development" !== 'production' && typeof window !== 'undefined') {
 
 var _default = styled;
 exports.default = _default;
-},{"react-is":"node_modules/react-is/index.js","react":"node_modules/react/index.js","shallowequal":"node_modules/shallowequal/index.js","@emotion/stylis":"node_modules/@emotion/stylis/dist/stylis.browser.esm.js","@emotion/unitless":"node_modules/@emotion/unitless/dist/unitless.browser.esm.js","@emotion/is-prop-valid":"node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js","hoist-non-react-statics":"node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js","process":"../../.nvm/versions/node/v10.16.3/lib/node_modules/parcel/node_modules/process/browser.js"}],"node_modules/@babel/runtime/helpers/esm/typeof.js":[function(require,module,exports) {
+},{"react-is":"node_modules/react-is/index.js","react":"node_modules/react/index.js","shallowequal":"node_modules/shallowequal/index.js","@emotion/stylis":"node_modules/@emotion/stylis/dist/stylis.browser.esm.js","@emotion/unitless":"node_modules/@emotion/unitless/dist/unitless.browser.esm.js","@emotion/is-prop-valid":"node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js","hoist-non-react-statics":"node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js","process":"node_modules/process/browser.js"}],"node_modules/@babel/runtime/helpers/esm/typeof.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -42842,7 +42842,7 @@ var _utils = require("./utils");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44057,7 +44057,8 @@ module.exports = {
   "error_default": "Ops… Maybe try it later!",
   "error_data": "Can not find statistics data of {{location}}.",
   "review_title": "reviews",
-  "region_title": "regions"
+  "region_title": "regions",
+  "friends_title": "Friends' Links"
 };
 },{}],"src/locales/zh-CN.json":[function(require,module,exports) {
 module.exports = {
@@ -44078,9 +44079,10 @@ module.exports = {
   "footnote_primary": "来自 {{source}} 的源数据。",
   "news_title": "更新",
   "source_name_dxy": "丁香园",
-  "source_name_wzw": "温州网",
+  "source_name_wzw": "温州发布",
   "review_title": "回顾",
-  "region_title": "区域"
+  "region_title": "区域",
+  "friends_title": "好友链接"
 };
 },{}],"src/i18n.ts":[function(require,module,exports) {
 "use strict";
@@ -45391,7 +45393,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function isClassComponent(elementType) {
   // elementType.prototype?.isReactComponent
@@ -50723,7 +50725,7 @@ Object.keys(_StylesProvider).forEach(function (key) {
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 },{"./StylesProvider":"node_modules/@material-ui/styles/esm/StylesProvider/StylesProvider.js"}],"node_modules/@material-ui/styles/esm/makeStyles/indexCounter.js":[function(require,module,exports) {
 "use strict";
 
@@ -51852,7 +51854,7 @@ Object.keys(_withTheme).forEach(function (key) {
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 },{"./withTheme":"node_modules/@material-ui/styles/esm/withTheme/withTheme.js"}],"node_modules/@material-ui/styles/esm/index.js":[function(require,module,exports) {
 "use strict";
 
@@ -52126,7 +52128,7 @@ Object.keys(_withTheme).forEach(function (key) {
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 /** @license Material-UI v4.9.0
  *
@@ -58792,7 +58794,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 },{"./borders":"node_modules/@material-ui/system/esm/borders.js","./breakpoints":"node_modules/@material-ui/system/esm/breakpoints.js","./compose":"node_modules/@material-ui/system/esm/compose.js","./css":"node_modules/@material-ui/system/esm/css.js","./display":"node_modules/@material-ui/system/esm/display.js","./flexbox":"node_modules/@material-ui/system/esm/flexbox.js","./palette":"node_modules/@material-ui/system/esm/palette.js","./positions":"node_modules/@material-ui/system/esm/positions.js","./shadows":"node_modules/@material-ui/system/esm/shadows.js","./sizing":"node_modules/@material-ui/system/esm/sizing.js","./spacing":"node_modules/@material-ui/system/esm/spacing.js","./style":"node_modules/@material-ui/system/esm/style.js","./typography":"node_modules/@material-ui/system/esm/typography.js"}],"node_modules/@material-ui/core/esm/Box/Box.js":[function(require,module,exports) {
 "use strict";
 
@@ -58841,7 +58843,7 @@ var _Box = _interopRequireWildcard(require("./Box"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 },{"./Box":"node_modules/@material-ui/core/esm/Box/Box.js"}],"node_modules/@material-ui/core/esm/Typography/Typography.js":[function(require,module,exports) {
 "use strict";
 
@@ -64369,7 +64371,7 @@ var _SimpleBackdrop = _interopRequireDefault(require("./SimpleBackdrop"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -67741,7 +67743,7 @@ var _utils2 = require("./utils");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -71321,7 +71323,7 @@ Object.keys(_withWidth).forEach(function (key) {
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 },{"./withWidth":"node_modules/@material-ui/core/esm/withWidth/withWidth.js"}],"node_modules/@material-ui/core/esm/Hidden/HiddenJs.js":[function(require,module,exports) {
 "use strict";
 
@@ -71340,7 +71342,7 @@ var _useTheme = _interopRequireDefault(require("../styles/useTheme"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -72359,7 +72361,7 @@ var _FormControlContext = _interopRequireWildcard(require("../FormControl/FormCo
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -84811,7 +84813,7 @@ var _SwipeArea = _interopRequireDefault(require("./SwipeArea"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -90091,7 +90093,7 @@ var _withWidth = _interopRequireWildcard(require("../withWidth"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -92627,7 +92629,7 @@ Object.keys(_Zoom).forEach(function (key) {
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 },{"./colors":"node_modules/@material-ui/core/esm/colors/index.js","./styles":"node_modules/@material-ui/core/esm/styles/index.js","./AppBar":"node_modules/@material-ui/core/esm/AppBar/index.js","./Avatar":"node_modules/@material-ui/core/esm/Avatar/index.js","./Backdrop":"node_modules/@material-ui/core/esm/Backdrop/index.js","./Badge":"node_modules/@material-ui/core/esm/Badge/index.js","./BottomNavigation":"node_modules/@material-ui/core/esm/BottomNavigation/index.js","./BottomNavigationAction":"node_modules/@material-ui/core/esm/BottomNavigationAction/index.js","./Box":"node_modules/@material-ui/core/esm/Box/index.js","./Breadcrumbs":"node_modules/@material-ui/core/esm/Breadcrumbs/index.js","./Button":"node_modules/@material-ui/core/esm/Button/index.js","./ButtonBase":"node_modules/@material-ui/core/esm/ButtonBase/index.js","./ButtonGroup":"node_modules/@material-ui/core/esm/ButtonGroup/index.js","./Card":"node_modules/@material-ui/core/esm/Card/index.js","./CardActionArea":"node_modules/@material-ui/core/esm/CardActionArea/index.js","./CardActions":"node_modules/@material-ui/core/esm/CardActions/index.js","./CardContent":"node_modules/@material-ui/core/esm/CardContent/index.js","./CardHeader":"node_modules/@material-ui/core/esm/CardHeader/index.js","./CardMedia":"node_modules/@material-ui/core/esm/CardMedia/index.js","./Checkbox":"node_modules/@material-ui/core/esm/Checkbox/index.js","./Chip":"node_modules/@material-ui/core/esm/Chip/index.js","./CircularProgress":"node_modules/@material-ui/core/esm/CircularProgress/index.js","./ClickAwayListener":"node_modules/@material-ui/core/esm/ClickAwayListener/index.js","./Collapse":"node_modules/@material-ui/core/esm/Collapse/index.js","./Container":"node_modules/@material-ui/core/esm/Container/index.js","./CssBaseline":"node_modules/@material-ui/core/esm/CssBaseline/index.js","./Dialog":"node_modules/@material-ui/core/esm/Dialog/index.js","./DialogActions":"node_modules/@material-ui/core/esm/DialogActions/index.js","./DialogContent":"node_modules/@material-ui/core/esm/DialogContent/index.js","./DialogContentText":"node_modules/@material-ui/core/esm/DialogContentText/index.js","./DialogTitle":"node_modules/@material-ui/core/esm/DialogTitle/index.js","./Divider":"node_modules/@material-ui/core/esm/Divider/index.js","./Drawer":"node_modules/@material-ui/core/esm/Drawer/index.js","./ExpansionPanel":"node_modules/@material-ui/core/esm/ExpansionPanel/index.js","./ExpansionPanelActions":"node_modules/@material-ui/core/esm/ExpansionPanelActions/index.js","./ExpansionPanelDetails":"node_modules/@material-ui/core/esm/ExpansionPanelDetails/index.js","./ExpansionPanelSummary":"node_modules/@material-ui/core/esm/ExpansionPanelSummary/index.js","./Fab":"node_modules/@material-ui/core/esm/Fab/index.js","./Fade":"node_modules/@material-ui/core/esm/Fade/index.js","./FilledInput":"node_modules/@material-ui/core/esm/FilledInput/index.js","./FormControl":"node_modules/@material-ui/core/esm/FormControl/index.js","./FormControlLabel":"node_modules/@material-ui/core/esm/FormControlLabel/index.js","./FormGroup":"node_modules/@material-ui/core/esm/FormGroup/index.js","./FormHelperText":"node_modules/@material-ui/core/esm/FormHelperText/index.js","./FormLabel":"node_modules/@material-ui/core/esm/FormLabel/index.js","./Grid":"node_modules/@material-ui/core/esm/Grid/index.js","./GridList":"node_modules/@material-ui/core/esm/GridList/index.js","./GridListTile":"node_modules/@material-ui/core/esm/GridListTile/index.js","./GridListTileBar":"node_modules/@material-ui/core/esm/GridListTileBar/index.js","./Grow":"node_modules/@material-ui/core/esm/Grow/index.js","./Hidden":"node_modules/@material-ui/core/esm/Hidden/index.js","./Icon":"node_modules/@material-ui/core/esm/Icon/index.js","./IconButton":"node_modules/@material-ui/core/esm/IconButton/index.js","./Input":"node_modules/@material-ui/core/esm/Input/index.js","./InputAdornment":"node_modules/@material-ui/core/esm/InputAdornment/index.js","./InputBase":"node_modules/@material-ui/core/esm/InputBase/index.js","./InputLabel":"node_modules/@material-ui/core/esm/InputLabel/index.js","./LinearProgress":"node_modules/@material-ui/core/esm/LinearProgress/index.js","./Link":"node_modules/@material-ui/core/esm/Link/index.js","./List":"node_modules/@material-ui/core/esm/List/index.js","./ListItem":"node_modules/@material-ui/core/esm/ListItem/index.js","./ListItemAvatar":"node_modules/@material-ui/core/esm/ListItemAvatar/index.js","./ListItemIcon":"node_modules/@material-ui/core/esm/ListItemIcon/index.js","./ListItemSecondaryAction":"node_modules/@material-ui/core/esm/ListItemSecondaryAction/index.js","./ListItemText":"node_modules/@material-ui/core/esm/ListItemText/index.js","./ListSubheader":"node_modules/@material-ui/core/esm/ListSubheader/index.js","./Menu":"node_modules/@material-ui/core/esm/Menu/index.js","./MenuItem":"node_modules/@material-ui/core/esm/MenuItem/index.js","./MenuList":"node_modules/@material-ui/core/esm/MenuList/index.js","./MobileStepper":"node_modules/@material-ui/core/esm/MobileStepper/index.js","./Modal":"node_modules/@material-ui/core/esm/Modal/index.js","./NativeSelect":"node_modules/@material-ui/core/esm/NativeSelect/index.js","./NoSsr":"node_modules/@material-ui/core/esm/NoSsr/index.js","./OutlinedInput":"node_modules/@material-ui/core/esm/OutlinedInput/index.js","./Paper":"node_modules/@material-ui/core/esm/Paper/index.js","./Popover":"node_modules/@material-ui/core/esm/Popover/index.js","./Popper":"node_modules/@material-ui/core/esm/Popper/index.js","./Portal":"node_modules/@material-ui/core/esm/Portal/index.js","./Radio":"node_modules/@material-ui/core/esm/Radio/index.js","./RadioGroup":"node_modules/@material-ui/core/esm/RadioGroup/index.js","./RootRef":"node_modules/@material-ui/core/esm/RootRef/index.js","./Select":"node_modules/@material-ui/core/esm/Select/index.js","./Slide":"node_modules/@material-ui/core/esm/Slide/index.js","./Slider":"node_modules/@material-ui/core/esm/Slider/index.js","./Snackbar":"node_modules/@material-ui/core/esm/Snackbar/index.js","./SnackbarContent":"node_modules/@material-ui/core/esm/SnackbarContent/index.js","./Step":"node_modules/@material-ui/core/esm/Step/index.js","./StepButton":"node_modules/@material-ui/core/esm/StepButton/index.js","./StepConnector":"node_modules/@material-ui/core/esm/StepConnector/index.js","./StepContent":"node_modules/@material-ui/core/esm/StepContent/index.js","./StepIcon":"node_modules/@material-ui/core/esm/StepIcon/index.js","./StepLabel":"node_modules/@material-ui/core/esm/StepLabel/index.js","./Stepper":"node_modules/@material-ui/core/esm/Stepper/index.js","./SvgIcon":"node_modules/@material-ui/core/esm/SvgIcon/index.js","./SwipeableDrawer":"node_modules/@material-ui/core/esm/SwipeableDrawer/index.js","./Switch":"node_modules/@material-ui/core/esm/Switch/index.js","./Tab":"node_modules/@material-ui/core/esm/Tab/index.js","./Table":"node_modules/@material-ui/core/esm/Table/index.js","./TableBody":"node_modules/@material-ui/core/esm/TableBody/index.js","./TableCell":"node_modules/@material-ui/core/esm/TableCell/index.js","./TableContainer":"node_modules/@material-ui/core/esm/TableContainer/index.js","./TableFooter":"node_modules/@material-ui/core/esm/TableFooter/index.js","./TableHead":"node_modules/@material-ui/core/esm/TableHead/index.js","./TablePagination":"node_modules/@material-ui/core/esm/TablePagination/index.js","./TableRow":"node_modules/@material-ui/core/esm/TableRow/index.js","./TableSortLabel":"node_modules/@material-ui/core/esm/TableSortLabel/index.js","./Tabs":"node_modules/@material-ui/core/esm/Tabs/index.js","./TextField":"node_modules/@material-ui/core/esm/TextField/index.js","./TextareaAutosize":"node_modules/@material-ui/core/esm/TextareaAutosize/index.js","./Toolbar":"node_modules/@material-ui/core/esm/Toolbar/index.js","./Tooltip":"node_modules/@material-ui/core/esm/Tooltip/index.js","./Typography":"node_modules/@material-ui/core/esm/Typography/index.js","./useMediaQuery":"node_modules/@material-ui/core/esm/useMediaQuery/index.js","./useScrollTrigger":"node_modules/@material-ui/core/esm/useScrollTrigger/index.js","./withMobileDialog":"node_modules/@material-ui/core/esm/withMobileDialog/index.js","./withWidth":"node_modules/@material-ui/core/esm/withWidth/index.js","./Zoom":"node_modules/@material-ui/core/esm/Zoom/index.js"}],"src/components/WebView.tsx":[function(require,module,exports) {
 "use strict";
 
@@ -92838,6 +92840,10 @@ function Headline(props) {
 exports.Headline = Headline;
 },{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../helpers":"src/helpers/index.ts"}],"src/assets/news.json":[function(require,module,exports) {
 module.exports = [{
+  "url": "https://mp.weixin.qq.com/s/zPmEI98HelX9i3O95CIhsQ",
+  "title": "2020年1月30日温州市新型冠状病毒感染的肺炎疫情通报",
+  "date": 1580313600000
+}, {
   "url": "http://www.wenzhou.gov.cn/art/2020/1/29/art_1217832_41860313.html",
   "title": "2020年1月29日温州市新型冠状病毒感染的肺炎疫情通报",
   "date": 1580227200000
@@ -93386,7 +93392,65 @@ function RegionInList(props) {
 }
 
 exports.RegionInList = RegionInList;
-},{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../helpers":"src/helpers/index.ts"}],"src/webviews/Home.tsx":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../helpers":"src/helpers/index.ts"}],"src/assets/friends.json":[function(require,module,exports) {
+module.exports = [{
+  "url": "https://qiufengh.com/sx-2019-nCoV/?from=timeline&isappinstalled=0",
+  "title": "绍兴-2019-nCoV"
+}];
+},{}],"src/services/firends.ts":[function(require,module,exports) {
+"use strict";
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var friends_json_1 = __importDefault(require("../assets/friends.json"));
+
+function getFriends() {
+  return friends_json_1.default;
+}
+
+exports.getFriends = getFriends;
+},{"../assets/friends.json":"src/assets/friends.json"}],"src/components/FriendInList.tsx":[function(require,module,exports) {
+"use strict";
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var react_1 = __importDefault(require("react"));
+
+var core_1 = require("@material-ui/core");
+
+var Link_1 = require("./Link");
+
+function FirendInList(props) {
+  var url = props.url,
+      title = props.title;
+  return react_1.default.createElement(core_1.Box, {
+    display: "flex",
+    style: {
+      padding: '0.5em 0'
+    }
+  }, react_1.default.createElement(Link_1.Link, {
+    href: url
+  }, title));
+}
+
+exports.FirendInList = FirendInList;
+},{"react":"node_modules/react/index.js","@material-ui/core":"node_modules/@material-ui/core/esm/index.js","./Link":"src/components/Link.tsx"}],"src/webviews/Home.tsx":[function(require,module,exports) {
 "use strict";
 
 var __assign = this && this.__assign || function () {
@@ -93455,12 +93519,17 @@ var region_1 = require("../services/region");
 
 var RegionInList_1 = require("../components/RegionInList");
 
+var firends_1 = require("../services/firends");
+
+var FriendInList_1 = require("../components/FriendInList");
+
 function Home() {
   var t = react_i18next_1.useTranslation().t;
   var HomeUI = styled_components_1.default.div(function () {
     return {};
   });
   var news = news_1.getNews();
+  var friends = firends_1.getFriends();
   var regions = region_1.getLatestRegionStatistics();
 
   var _a = react_1.useContext(Statistics_1.StatisticsContext),
@@ -93523,6 +93592,10 @@ function Home() {
     return react_1.default.createElement(NewsInList_1.NewsInList, __assign({
       key: item.url
     }, item));
+  }), react_1.default.createElement(Headline_1.Headline, null, t('friends_title')), friends.map(function (friend) {
+    return react_1.default.createElement(FriendInList_1.FirendInList, __assign({
+      key: friend.url
+    }, friend));
   }), react_1.default.createElement(Footnote_1.Footnote, null, t('footnote_primary', {
     source: t('source_name_dxy') + " " + t('source_name_wzw')
   }), "\xA0", t('footnote_secondary', {
@@ -93532,7 +93605,7 @@ function Home() {
 }
 
 exports.Home = Home;
-},{"react":"node_modules/react/index.js","react-i18next":"node_modules/react-i18next/dist/es/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../components/Title":"src/components/Title.tsx","../components/WebView":"src/components/WebView.tsx","../components/Counter":"src/components/Counter.tsx","@material-ui/core":"node_modules/@material-ui/core/esm/index.js","../components/Headline":"src/components/Headline.tsx","../services/news":"src/services/news.ts","../components/Footnote":"src/components/Footnote.tsx","../providers/Statistics":"src/providers/Statistics.ts","../components/NewsInList":"src/components/NewsInList.tsx","../components/EventInList":"src/components/EventInList.tsx","../services/region":"src/services/region.ts","../components/RegionInList":"src/components/RegionInList.tsx"}],"src/webviews/Error.tsx":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-i18next":"node_modules/react-i18next/dist/es/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../components/Title":"src/components/Title.tsx","../components/WebView":"src/components/WebView.tsx","../components/Counter":"src/components/Counter.tsx","@material-ui/core":"node_modules/@material-ui/core/esm/index.js","../components/Headline":"src/components/Headline.tsx","../services/news":"src/services/news.ts","../components/Footnote":"src/components/Footnote.tsx","../providers/Statistics":"src/providers/Statistics.ts","../components/NewsInList":"src/components/NewsInList.tsx","../components/EventInList":"src/components/EventInList.tsx","../services/region":"src/services/region.ts","../components/RegionInList":"src/components/RegionInList.tsx","../services/firends":"src/services/firends.ts","../components/FriendInList":"src/components/FriendInList.tsx"}],"src/webviews/Error.tsx":[function(require,module,exports) {
 "use strict";
 
 var __importDefault = this && this.__importDefault || function (mod) {
@@ -95678,7 +95751,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50389" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54673" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
