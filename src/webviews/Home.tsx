@@ -59,25 +59,29 @@ export function Home() {
             unit={t('counter_unit')}
           />
         </Box>
-        <Headline>{t('region_title')}</Headline>
-        {regions.map(region => (
-          <RegionInList
-            key={region.regionName}
-            name={region.regionName}
-            value={region.confirmedCount}
-            unit={t('counter_unit')}
-          ></RegionInList>
-        ))}
-        <RegionInList
-          key="total"
-          name={t('region_name_summary')}
-          value={regions.reduce(
-            (total, region) => total + region.confirmedCount,
-            0
-          )}
-          unit={t('counter_unit')}
-        ></RegionInList>
-
+        {regions.length ? (
+          <>
+            {' '}
+            <Headline>{t('region_title')}</Headline>
+            {regions.map(region => (
+              <RegionInList
+                key={region.regionName}
+                name={region.regionName}
+                value={region.confirmedCount}
+                unit={t('counter_unit')}
+              ></RegionInList>
+            ))}
+            <RegionInList
+              key="total"
+              name={t('region_name_summary')}
+              value={regions.reduce(
+                (total, region) => total + region.confirmedCount,
+                0
+              )}
+              unit={t('counter_unit')}
+            ></RegionInList>
+          </>
+        ) : null}
         <Headline>{t('review_title')}</Headline>
         {timeline.map(event => (
           <EventInList
