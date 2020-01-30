@@ -95236,7 +95236,7 @@ var settings_1 = require("../settings");
 var isaaclin_json_1 = __importDefault(require("../assets/isaaclin.json"));
 
 function getCachedStatistics() {
-  return isaaclin_json_1.default;
+  return isaaclin_json_1.default.results;
 }
 
 function getNetworkStatistics() {
@@ -95275,113 +95275,95 @@ function getNetworkStatistics() {
   });
 }
 
-function getLatestStatistics() {
+function getLatestStatistics(results) {
   var _a;
 
-  return __awaiter(this, void 0, void 0, function () {
-    var statistics, zj, wz;
-    return __generator(this, function (_b) {
-      statistics = getCachedStatistics().results.sort(function (a, b) {
-        var _a, _b, _c, _d;
+  var statistics = results.sort(function (a, b) {
+    var _a, _b, _c, _d;
 
-        return (_b = (_a = b) === null || _a === void 0 ? void 0 : _a.updateTime, _b !== null && _b !== void 0 ? _b : 0) - (_d = (_c = a) === null || _c === void 0 ? void 0 : _c.updateTime, _d !== null && _d !== void 0 ? _d : 0);
-      });
-      zj = statistics[0];
-      wz = (_a = zj) === null || _a === void 0 ? void 0 : _a.cities.find(function (city) {
-        return city.cityName === '温州';
-      });
-
-      if (!zj || !wz) {
-        throw new Error(i18n_1.default.t('error_data', {
-          location: i18n_1.default.t('app_title_location')
-        }));
-      }
-
-      return [2
-      /*return*/
-      , {
-        createTime: 0,
-        modifyTime: zj.updateTime,
-        confirmed: wz.confirmedCount,
-        suspected: wz.suspectedCount,
-        dead: wz.deadCount,
-        cured: wz.curedCount
-      }];
-    });
+    return (_b = (_a = b) === null || _a === void 0 ? void 0 : _a.updateTime, _b !== null && _b !== void 0 ? _b : 0) - (_d = (_c = a) === null || _c === void 0 ? void 0 : _c.updateTime, _d !== null && _d !== void 0 ? _d : 0);
   });
+  var zj = statistics[0];
+  var wz = (_a = zj) === null || _a === void 0 ? void 0 : _a.cities.find(function (city) {
+    return city.cityName === '温州';
+  });
+
+  if (!zj || !wz) {
+    throw new Error(i18n_1.default.t('error_data', {
+      location: i18n_1.default.t('app_title_location')
+    }));
+  }
+
+  return {
+    createTime: 0,
+    modifyTime: zj.updateTime,
+    confirmed: wz.confirmedCount,
+    suspected: wz.suspectedCount,
+    dead: wz.deadCount,
+    cured: wz.curedCount
+  };
 }
 
-function getTimelineStatistics() {
-  return __awaiter(this, void 0, void 0, function () {
-    var statistics, dateMap;
-    return __generator(this, function (_a) {
-      statistics = getCachedStatistics().results.sort(function (a, b) {
-        var _a, _b, _c, _d;
+function getTimelineStatistics(results) {
+  var statistics = results.sort(function (a, b) {
+    var _a, _b, _c, _d;
 
-        return (_b = (_a = b) === null || _a === void 0 ? void 0 : _a.updateTime, _b !== null && _b !== void 0 ? _b : 0) - (_d = (_c = a) === null || _c === void 0 ? void 0 : _c.updateTime, _d !== null && _d !== void 0 ? _d : 0);
-      });
-      dateMap = new Map();
-      return [2
-      /*return*/
-      , statistics.map(function (item) {
-        var wz = item.cities.find(function (city) {
-          return city.cityName === '温州';
-        });
-
-        if (!wz) {
-          return undefined;
-        }
-
-        return __assign(__assign({}, wz), {
-          updateTime: item.updateTime
-        });
-      }).map(function (item) {
-        return item ? {
-          updateTime: item.updateTime,
-          confirmed: item.confirmedCount
-        } : item;
-      }).filter(function (item) {
-        if (!item) {
-          return false;
-        }
-
-        var updateTime = item.updateTime,
-            confirmed = item.confirmed;
-        var dateStr = new Date(updateTime).toLocaleDateString();
-
-        if (!dateMap.has(dateStr) || dateMap.get(dateStr) < confirmed) {
-          dateMap.set(dateStr, confirmed);
-          return true;
-        }
-
-        return false;
-      })];
+    return (_b = (_a = b) === null || _a === void 0 ? void 0 : _a.updateTime, _b !== null && _b !== void 0 ? _b : 0) - (_d = (_c = a) === null || _c === void 0 ? void 0 : _c.updateTime, _d !== null && _d !== void 0 ? _d : 0);
+  });
+  var dateMap = new Map();
+  return statistics.map(function (item) {
+    var wz = item.cities.find(function (city) {
+      return city.cityName === '温州';
     });
+
+    if (!wz) {
+      return undefined;
+    }
+
+    return __assign(__assign({}, wz), {
+      updateTime: item.updateTime
+    });
+  }).map(function (item) {
+    return item ? {
+      updateTime: item.updateTime,
+      confirmed: item.confirmedCount
+    } : item;
+  }).filter(function (item) {
+    if (!item) {
+      return false;
+    }
+
+    var updateTime = item.updateTime,
+        confirmed = item.confirmed;
+    var dateStr = new Date(updateTime).toLocaleDateString();
+
+    if (!dateMap.has(dateStr) || dateMap.get(dateStr) < confirmed) {
+      dateMap.set(dateStr, confirmed);
+      return true;
+    }
+
+    return false;
   });
 }
 
 function getStatistics() {
   return __awaiter(this, void 0, void 0, function () {
-    var _a;
-
-    return __generator(this, function (_b) {
-      switch (_b.label) {
+    var results;
+    return __generator(this, function (_a) {
+      switch (_a.label) {
         case 0:
-          _a = {};
           return [4
           /*yield*/
-          , getLatestStatistics()];
+          , getNetworkStatistics()];
 
         case 1:
-          _a.latest = _b.sent();
-          return [4
-          /*yield*/
-          , getTimelineStatistics()];
-
-        case 2:
+          results = _a.sent();
           return [2
           /*return*/
-          , (_a.timeline = _b.sent(), _a)];
+          , {
+            latest: getLatestStatistics(results),
+            timeline: getTimelineStatistics(results)
+          }];
       }
     });
   });
@@ -95560,7 +95542,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59127" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60068" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
