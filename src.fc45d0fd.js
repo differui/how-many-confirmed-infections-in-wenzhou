@@ -44053,7 +44053,7 @@ module.exports = {
   "footnote_primary": "Source data from {{source}}.",
   "footnote_secondary": "Last updated at {{updated}}.",
   "source_name_dxy": "丁香园",
-  "source_name_wzw": "温州网",
+  "source_name_wzfb": "温州网",
   "error_default": "Ops… Maybe try it later!",
   "error_data": "Can not find statistics data of {{location}}.",
   "review_title": "reviews",
@@ -44079,7 +44079,7 @@ module.exports = {
   "footnote_primary": "来自 {{source}} 的源数据。",
   "news_title": "更新",
   "source_name_dxy": "丁香园",
-  "source_name_wzw": "温州发布",
+  "source_name_wzfb": "温州发布",
   "review_title": "回顾",
   "region_title": "区域",
   "friends_title": "好友链接"
@@ -93597,7 +93597,7 @@ function Home() {
       key: friend.url
     }, friend));
   }), react_1.default.createElement(Footnote_1.Footnote, null, t('footnote_primary', {
-    source: t('source_name_dxy') + " " + t('source_name_wzw')
+    source: t('source_name_dxy') + " " + t('source_name_wzfb')
   }), "\xA0", t('footnote_secondary', {
     created: new Date(createTime).toLocaleString(),
     updated: new Date(modifyTime).toLocaleString()
