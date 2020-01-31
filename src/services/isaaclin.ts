@@ -1,6 +1,7 @@
 import i18n from '../i18n';
 import { URL_ISAACLIN } from '../settings';
 import STATISTICS from '../assets/isaaclin.json';
+import { isToday } from '../helpers/date';
 
 function filterResults(results: typeof STATISTICS.results) {
   const dateMap = new Map<string, typeof STATISTICS.results[number]>();

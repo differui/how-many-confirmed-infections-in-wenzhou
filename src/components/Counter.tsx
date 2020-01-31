@@ -44,7 +44,7 @@ export function Counter(props: CounterProps) {
         {sign && typeof value === 'number' ? (
           <span>{Math.sign(value) > 0 ? '+' : '-'}</span>
         ) : null}
-        <span>{typeof value === 'number' ? thousands(value) : '?'}</span>
+        <span>{typeof value === 'number' ? thousands(value) : value}</span>
       </Box>
 
       {typeof value === 'number' && value > 0 ? (

@@ -8,6 +8,7 @@
   "counter_title_cured": "治愈",
   "counter_title_dead": "死亡",
   "counter_title_new": "新增",
+  "counter_title_severe": "重症",
   "counter_title_suspected": "疑似",
   "counter_unit": "例",
   "error_data": "找不到{{location}的统计数据。",
@@ -19,6 +20,6 @@
   "source_name_wzw": "温州网",
   "source_name_wzfb": "温州发布",
   "review_title": "回顾",
-  "region_title": "区域",
-  "friends_title": "好友链接"
+  "friends_title": "好友链接",
+  "counter_no_data": "?"
 }

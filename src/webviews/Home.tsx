@@ -17,6 +17,7 @@ import { RegionInList } from '../components/RegionInList';
 import { getFriends } from '../services/firends';
 import { FirendInList } from '../components/FriendInList';
 import { WenZhouMap } from '../components/WenZhouMap';
+import { isToday } from '../helpers/date';
 
 export function Home() {
   const { t } = useTranslation();
@@ -26,7 +27,12 @@ export function Home() {
 
   const news = getNews();
   const friends = getFriends();
-  const regions = getLatestRegionStatistics();
+  const {
+    server: serverRegions,
+    cured: curedRegions,
+    new: newRegions,
+    confirmed: confirmedRegions,
+  } = getLatestRegionStatistics();
   const { latest, timeline } = useContext(StatisticsContext);
   const {
     confirmed,
@@ -37,6 +43,8 @@ export function Home() {
     createTime,
     modifyTime,
   } = latest;
+  const isModifyAtToday = isToday(modifyTime);
+  const noDataFallback = t('counter_no_data') as string;
 
   return (
     <WebView>
@@ -48,59 +56,122 @@ export function Home() {
         </Title>
         <Counter
           size="lg"
-          value={confirmed}
+          value={isModifyAtToday ? confirmed : noDataFallback}
           title={t('counter_title_confirmed')}
           unit={t('counter_unit')}
         />
         <Box display="flex" justifyContent="space-between">
           <Counter
             size="md"
-            value="?"
+            value={noDataFallback}
             title={t('counter_title_suspected')}
             unit={t('counter_unit')}
           />
           <Counter
             size="md"
-            value={cured}
+            value={isModifyAtToday ? cured : noDataFallback}
             title={t('counter_title_cured')}
             unit={t('counter_unit')}
           />
           <Counter
             size="md"
-            value={dead}
+            value={isModifyAtToday ? dead : noDataFallback}
             title={t('counter_title_dead')}
             unit={t('counter_unit')}
           />
           {delta > 0 ? (
             <Counter
               size="md"
-              value={delta}
+              value={isModifyAtToday ? delta : noDataFallback}
               title={t('counter_title_new')}
               unit={t('counter_unit')}
             />
           ) : null}
         </Box>
 
-        <Headline>{t('region_title')}</Headline>
-        <WenZhouMap></WenZhouMap>
+        {confirmedRegions ? (
+          <>
+            <Headline>{t('counter_title_confirmed')}</Headline>
+            <WenZhouMap></WenZhouMap>
+          </>
+        ) : null}
 
-        <Headline>{t('review_title')}</Headline>
-        {timeline.map(event => (
-          <EventInList
-            key={event.updateTime}
-            date={event.updateTime}
-            value={event.confirmed}
-            unit={t('counter_unit')}
-          ></EventInList>
-        ))}
-        <Headline>{t('news_title')}</Headline>
-        {news.map(item => (
-          <NewsInList key={item.url} {...item}></NewsInList>
-        ))}
-        <Headline>{t('friends_title')}</Headline>
-        {friends.map(friend => (
-          <FirendInList key={friend.url} {...friend}></FirendInList>
-        ))}
+        {newRegions.length ? (
+          <>
+            <Headline>{t('counter_title_new')}</Headline>
+            {newRegions.map(region => (
+              <RegionInList
+                key={region.regionName}
+                name={region.regionName}
+                value={region.newCount!}
+                unit={t('counter_unit')}
+              ></RegionInList>
+            ))}
+          </>
+        ) : null}
+
+        {curedRegions.length ? (
+          <>
+            <Headline>{t('counter_title_cured')}</Headline>
+            {curedRegions.map(region => (
+              <RegionInList
+                key={region.regionName}
+                name={region.regionName}
+                value={region.curedCount!}
+                unit={t('counter_unit')}
+              ></RegionInList>
+            ))}
+          </>
+        ) : null}
+
+        {serverRegions.length ? (
+          <>
+            <Headline>{t('counter_title_severe')}</Headline>
+            {serverRegions.map(region => (
+              <RegionInList
+                key={region.regionName}
+                name={region.regionName}
+                value={region.severeCount!}
+                unit={t('counter_unit')}
+              ></RegionInList>
+            ))}
+          </>
+        ) : null}
+
+        {timeline.length ? (
+          <>
+            <Headline>{t('review_title')}</Headline>
+            {timeline.map(event => (
+              <EventInList
+                key={event.updateTime}
+                date={event.updateTime}
+                value={event.confirmed}
+                unit={t('counter_unit')}
+              ></EventInList>
+            ))}
+          </>
+        ) : null}
+
+        {news.length ? (
+          <>
+            {' '}
+            <Headline>{t('news_title')}</Headline>
+            {news.map(item => (
+              <NewsInList key={item.url} {...item}></NewsInList>
+            ))}
+          </>
+        ) : null}
+
+        {friends.length ? (
+          <>
+            {' '}
+            <Headline>{t('friends_title')}</Headline>
+            {friends.map(friend => (
+              <FirendInList key={friend.url} {...friend}></FirendInList>
+            ))}
+          </>
+        ) : null}
+
         <Footnote>
           {t('footnote_primary', {
             source: `${t('source_name_dxy')} ${t('source_name_wzw')} ${t(

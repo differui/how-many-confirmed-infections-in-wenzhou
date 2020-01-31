@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import md5 from 'md5';
 
@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 
 export function WenZhouStatisticMap() {
   const { t } = useTranslation();
-  const regions = getLatestRegionStatistics();
+  const regions = getLatestRegionStatistics().confirmed;
   const MapUI = styled.div<ThemeProps>((props: ThemeProps) => {
     return {
       width: '100%',
@@ -28,8 +28,8 @@ export function WenZhouStatisticMap() {
         top: 118,
       },
       [`.md_${md5('龙湾区')}`]: {
-        left: 193,
-        top: 128,
+        left: 195,
+        top: 135,
       },
       [`.md_${md5('洞头区')}`]: {
         left: 240,
@@ -70,16 +70,23 @@ export function WenZhouStatisticMap() {
     };
   });
 
+  const [filterKey, setFilterKey] = useState<
+    Exclude<keyof typeof regions[0], 'regionName' | 'regionShortName'>
+  >('confirmedCount');
+
   return (
     <MapUI className="statistic">
       {regions
-        .filter(region => region.confirmedCount > 0)
+        .filter(
+          region =>
+            typeof region[filterKey] === 'number' && region[filterKey]! > 0
+        )
         .map(region => (
           <Pushpin
             key={region.regionShortName}
             text={region.regionName}
             name={`md_${md5(region.regionName)}`}
-            value={region.confirmedCount}
+            value={region[filterKey]!}
             unit={t('counter_unit')}
           ></Pushpin>
         ))}

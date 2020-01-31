@@ -8,6 +8,7 @@
   "region_name_summary": "Summary",
   "counter_title_suspected": "suspected",
   "counter_title_cured": "cured",
+  "counter_title_severe": "severe",
   "counter_title_dead": "dead",
   "counter_title_new": "new",
   "news_title": "updates",
@@ -19,6 +20,6 @@
   "error_default": "Ops… Maybe try it later!",
   "error_data": "Can not find statistics data of {{location}}.",
   "review_title": "reviews",
-  "region_title": "regions",
-  "friends_title": "Friends' Links"
+  "friends_title": "Friends' Links",
+  "counter_no_data": "?"
 }

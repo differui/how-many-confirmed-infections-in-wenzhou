@@ -1,4 +1,5 @@
 dist/
 node_modules/
 src/assets/dxy.json
+src/assets/isaaclin.json
 scripts/publish.sh
