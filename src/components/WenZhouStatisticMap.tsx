@@ -40,7 +40,7 @@ export function WenZhouStatisticMap() {
         top: 50,
       },
       [`.md_${md5('瑞安市')}`]: {
-        left: 115,
+        left: 118,
         top: 145,
       },
       [`.md_${md5('龙港市')}`]: {
