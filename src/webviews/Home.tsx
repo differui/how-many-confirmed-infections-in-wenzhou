@@ -89,7 +89,7 @@ export function Home() {
           ) : null}
         </Box>
 
-        {confirmedRegions ? (
+        {confirmedRegions.length ? (
           <>
             <Headline>{t('counter_title_confirmed')}</Headline>
             <WenZhouMap></WenZhouMap>
